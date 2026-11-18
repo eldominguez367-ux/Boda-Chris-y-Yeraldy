@@ -1,0 +1,55 @@
+.hidden { display: none !important; }
+.builder { display: grid; grid-template-columns: 1fr 380px; gap: 48px; padding: 36px 0 80px; align-items: start; }
+.b-form h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: .2em; }
+#bForm { margin-top: 24px; display: grid; gap: 14px; }
+#bForm details, .guests, .load-box { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 0 22px; }
+#bForm details[open] { padding-bottom: 20px; }
+#bForm summary, .guests summary, .load-box summary { cursor: pointer; padding: 18px 0; font-weight: 500; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; }
+#bForm summary::after, .guests summary::after, .load-box summary::after { content: "+"; color: var(--gold-d); font-size: 1.3rem; line-height: 1; }
+details[open] > summary::after { content: "−"; }
+summary::-webkit-details-marker { display: none; }
+#bForm label, .link-box label { display: block; margin-bottom: 12px; }
+#bForm label span, .link-box label > span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 5px; }
+#bForm input, #bForm textarea, #bForm select, .b-output input, .b-output textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; font: 16px var(--f-body); background: var(--ivory); color: var(--ink); }
+#bForm input:focus, #bForm textarea:focus, #bForm select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.err { border-color: #c0392b !important; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.theme-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+.tp { display: flex !important; flex-direction: column; align-items: center; gap: 8px; padding: 14px 8px; border: 1.5px solid var(--line); border-radius: 14px; cursor: pointer; font-size: 14px; text-align: center; transition: .2s; margin: 0 !important; }
+.tp input { position: absolute; opacity: 0; pointer-events: none; }
+.tp.on { border-color: var(--forest); background: var(--cream); }
+.tp-sw { display: flex; gap: 4px; margin: 0 !important; }
+.tp-sw i { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); }
+.b-output { margin-top: 26px; display: grid; gap: 16px; }
+.b-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.note { font-size: 14px; color: var(--muted); margin: 0; background: var(--cream); padding: 12px 16px; border-radius: 12px; }
+.link-box { background: #fff; border: 2px solid var(--gold); border-radius: 16px; padding: 22px; display: grid; gap: 14px; }
+.copy-row { display: flex; gap: 8px; }
+.copy-row input { flex: 1; min-width: 0; font-size: 14px !important; }
+.qr-box { display: grid; place-items: center; padding: 10px; }
+.qr-box img, .qr-box canvas { border: 10px solid #fff; box-shadow: var(--shadow); }
+.guests { padding-bottom: 14px; }
+.guests textarea { margin-bottom: 10px; }
+.guest-links { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+.guest-links li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.guest-links li span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.small { font-size: 14px; }
+.load-box { padding-bottom: 14px; }
+.linkish { background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; margin-top: 12px; font: 14px var(--f-body); }
+.b-preview .sticky { position: sticky; top: 92px; text-align: center; }
+.preview-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.b-preview .phone-hero { transform: none; display: inline-block; }
+@media (max-width: 960px) {
+  .builder { grid-template-columns: 1fr; }
+  .b-preview { order: -1; }
+  .b-preview .sticky { position: static; }
+  .b-preview .phone-hero iframe { width: 300px; height: 560px; }
+}
+@media (max-width: 520px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .theme-pick { grid-template-columns: repeat(2, 1fr); }
+  .b-preview .phone-hero iframe { width: 260px; height: 500px; }
+}
+#bForm .tp-sw { display: flex; gap: 4px; margin: 0; }
+#bForm .tp-sw i { display: block; width: 16px; height: 16px; border-radius: 50%; }
+#bForm .tp > span:last-child { margin: 0; color: var(--ink); }

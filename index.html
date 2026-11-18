@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eterna · Invitaciones de boda digitales</title>
+<meta name="description" content="Invitaciones de boda digitales elegantes con confirmación de asistencia (RSVP), cuenta regresiva, mapas, música y 10 idiomas. Listas en 48 horas.">
+<meta property="og:title" content="Eterna · Invitaciones de boda digitales">
+<meta property="og:description" content="Diseños elegantes, RSVP online, cuenta regresiva, mapas y música. En 10 idiomas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2f3a31">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#" class="logo"><span class="logo-script" data-brand>Eterna</span><small data-i18n="hero_badge">Invitaciones de boda digitales</small></a>
+    <nav class="nav" id="nav">
+      <a href="#disenos" data-i18n="nav_templates">Diseños</a>
+      <a href="#funciones" data-i18n="nav_features">Funciones</a>
+      <a href="#como" data-i18n="nav_how">Cómo funciona</a>
+      <a href="#precios" data-i18n="nav_pricing">Precios</a>
+      <a href="#faq" data-i18n="nav_faq">Preguntas</a>
+    </nav>
+    <div class="header-actions">
+      <select id="lang" class="lang" aria-label="Idioma"></select>
+      <a href="crear.html" class="btn btn-dark hide-sm" data-i18n="nav_create">Crear mi invitación</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <p class="badge"><span>💍</span> <span data-i18n="hero_badge">Invitaciones de boda digitales</span></p>
+        <h1 data-i18n="hero_title">Su boda empieza con una invitación inolvidable</h1>
+        <p class="lead" data-i18n="hero_sub"></p>
+        <div class="hero-ctas">
+          <a href="#disenos" class="btn btn-dark btn-lg" data-i18n="hero_cta1">Ver diseños</a>
+          <a href="crear.html" class="btn btn-line btn-lg" data-i18n="hero_cta2">Créala gratis</a>
+        </div>
+        <ul class="hero-stats">
+          <li><b>48h</b><span data-i18n="hero_s1"></span></li>
+          <li><b>10</b><span data-i18n="hero_s2"></span></li>
+          <li><b>∞</b><span data-i18n="hero_s3"></span></li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="phone phone-hero"><iframe src="invitacion.html?demo=classic&amp;g=Familia%20P%C3%A9rez&amp;n=4" title="Demo" loading="eager"></iframe></div>
+        <div class="float-card fc1">✅ <b>Familia Pérez</b> · 4</div>
+        <div class="float-card fc2">⏳ <b id="heroDays">150</b> <span data-i18n="inv_days">días</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section class="section" id="funciones">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="feat_title"></h2>
+        <p data-i18n="feat_sub"></p>
+      </div>
+      <div class="features" id="features"></div>
+    </div>
+  </section>
+
+  <!-- DISEÑOS -->
+  <section class="section alt" id="disenos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="tpl_title"></h2>
+        <p data-i18n="tpl_sub"></p>
+      </div>
+      <div class="templates" id="templates"></div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="section" id="como">
+    <div class="wrap">
+      <div class="section-head"><h2 data-i18n="how_title"></h2></div>
+      <ol class="steps">
+        <li><span class="step-n">1</span><h3 data-i18n="h1_t"></h3><p data-i18n="h1_d"></p></li>
+        <li><span class="step-n">2</span><h3 data-i18n="h2_t"></h3><p data-i18n="h2_d"></p></li>
+        <li><span class="step-n">3</span><h3 data-i18n="h3_t"></h3><p data-i18n="h3_d"></p></li>
+        <li><span class="step-n">4</span><h3 data-i18n="h4_t"></h3><p data-i18n="h4_d"></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BANDA CTA -->
+  <section class="cta-band">
+    <div class="wrap cta-in">
+      <div><h2 data-i18n="cta_band_title"></h2><p data-i18n="cta_band_sub"></p></div>
+      <a href="crear.html" class="btn btn-gold btn-lg" data-i18n="hero_cta2">Créala gratis</a>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="section" id="precios">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="price_title"></h2>
+        <p data-i18n="price_sub"></p>
+      </div>
+      <div class="plans" id="plans"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt" id="faq">
+    <div class="wrap narrow">
+      <div class="section-head"><h2 data-i18n="faq_title"></h2></div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- PEDIDO -->
+  <section class="section" id="pedido">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <h2 data-i18n="order_title"></h2>
+        <p data-i18n="order_sub"></p>
+      </div>
+      <form class="order" id="orderForm">
+        <label><span data-i18n="o_name"></span><input name="names" required placeholder="Chris & Yeraldy"></label>
+        <label><span data-i18n="o_contact"></span><input name="contact" required></label>
+        <label><span data-i18n="o_date"></span><input name="date" type="date"></label>
+        <label><span data-i18n="o_tpl"></span><select name="tpl" id="oTpl"></select></label>
+        <label><span data-i18n="o_plan"></span><select name="plan" id="oPlan"></select></label>
+        <label><span data-i18n="o_lang"></span><input name="langs" placeholder="Español, English"></label>
+        <label class="full"><span data-i18n="o_msg"></span><textarea name="msg" rows="3"></textarea></label>
+        <div class="full order-actions">
+          <button class="btn btn-wa btn-lg" type="submit"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg><span data-i18n="o_send"></span></button>
+          <p class="muted"><span data-i18n="o_email"></span> <a data-email href="#"></a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <div class="logo-script light" data-brand>Eterna</div>
+      <p data-i18n="footer_tag"></p>
+      <div class="socials" id="socials"></div>
+    </div>
+    <nav class="footer-nav">
+      <a href="#disenos" data-i18n="nav_templates"></a>
+      <a href="#precios" data-i18n="nav_pricing"></a>
+      <a href="#faq" data-i18n="nav_faq"></a>
+      <a href="crear.html" data-i18n="nav_create"></a>
+    </nav>
+  </div>
+  <div class="wrap copy">© <span id="year"></span> <span data-brand>Eterna</span>. <span data-i18n="footer_rights"></span></div>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
+
+<script src="config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/themes.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

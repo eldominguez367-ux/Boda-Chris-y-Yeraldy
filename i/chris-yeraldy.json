@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "theme": "classic",
+  "lang": "es",
+  "n1": "Chris",
+  "n2": "Yeraldy",
+  "date": "2027-05-15",
+  "time": "17:00",
+  "msg": "Después de tantos momentos juntos, queremos compartir contigo el día más especial de nuestras vidas.",
+  "hashtag": "#ChrisYYeraldy",
+  "cer": { "place": "Capilla San Rafael", "addr": "Av. Principal 123, Santo Domingo", "time": "17:00" },
+  "rec": { "place": "Hacienda Los Jardines", "addr": "Carretera del Valle km 5, Santo Domingo", "time": "19:00" },
+  "dress": "Formal · Elegante",
+  "sched": "17:00 Ceremonia\n18:30 Cóctel de bienvenida\n20:00 Cena\n22:00 ¡A bailar!",
+  "gifts": "Banco Ejemplo · Cuenta 0000 0000 0000",
+  "rsvpWa": "18090000000",
+  "rsvpBy": "2027-04-15"
+}

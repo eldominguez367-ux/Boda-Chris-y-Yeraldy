@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear invitación · Eterna</title>
+<meta name="description" content="Crea tu invitación de boda digital y mírala en tiempo real.">
+<meta name="theme-color" content="#2f3a31">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/builder.css">
+</head>
+<body class="builder-page">
+<header class="header scrolled">
+  <div class="wrap header-in">
+    <a href="index.html" class="logo"><span class="logo-script" data-brand>Eterna</span><small data-i18n="hero_badge"></small></a>
+    <div class="header-actions">
+      <select id="lang" class="lang" aria-label="Idioma"></select>
+      <a href="index.html#precios" class="btn btn-line hide-sm" data-i18n="nav_pricing"></a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap builder">
+  <section class="b-form">
+    <h1 data-i18n="b_title"></h1>
+    <p class="muted" data-i18n="b_sub"></p>
+
+    <form id="bForm" autocomplete="off">
+      <details open>
+        <summary data-i18n="b_sec_style"></summary>
+        <div class="theme-pick" id="themePick"></div>
+        <div class="grid2">
+          <label><span data-i18n="b_lang"></span><select name="lang" id="bLang"></select></label>
+        </div>
+      </details>
+
+      <details open>
+        <summary data-i18n="b_sec_couple"></summary>
+        <div class="grid2">
+          <label><span data-i18n="b_name1"></span><input name="n1" maxlength="40"></label>
+          <label><span data-i18n="b_name2"></span><input name="n2" maxlength="40"></label>
+          <label><span data-i18n="b_date"></span><input name="date" type="date"></label>
+          <label><span data-i18n="b_hashtag"></span><input name="hashtag" placeholder="#NuestraBoda"></label>
+        </div>
+        <label><span data-i18n="b_message"></span><textarea name="msg" rows="3"></textarea></label>
+      </details>
+
+      <details>
+        <summary data-i18n="b_sec_cer"></summary>
+        <div class="grid2">
+          <label><span data-i18n="b_place"></span><input name="cer.place"></label>
+          <label><span data-i18n="b_time"></span><input name="cer.time" type="time"></label>
+        </div>
+        <label><span data-i18n="b_address"></span><input name="cer.addr"></label>
+        <label><span data-i18n="b_maplink"></span><input name="cer.map" type="url" placeholder="https://maps.app.goo.gl/..."></label>
+      </details>
+
+      <details>
+        <summary data-i18n="b_sec_rec"></summary>
+        <div class="grid2">
+          <label><span data-i18n="b_place"></span><input name="rec.place"></label>
+          <label><span data-i18n="b_time"></span><input name="rec.time" type="time"></label>
+        </div>
+        <label><span data-i18n="b_address"></span><input name="rec.addr"></label>
+        <label><span data-i18n="b_maplink"></span><input name="rec.map" type="url" placeholder="https://maps.app.goo.gl/..."></label>
+      </details>
+
+      <details>
+        <summary data-i18n="b_sec_details"></summary>
+        <label><span data-i18n="b_dress"></span><input name="dress"></label>
+        <label><span data-i18n="b_schedule"></span><textarea name="sched" rows="4"></textarea></label>
+        <label><span data-i18n="b_gifts"></span><textarea name="gifts" rows="2"></textarea></label>
+        <label><span data-i18n="b_cover"></span><input name="cover" type="url" placeholder="https://..."></label>
+        <label><span data-i18n="b_photos"></span><textarea name="photos" rows="3" placeholder="https://..."></textarea></label>
+        <label><span data-i18n="b_music"></span><input name="music" type="url" placeholder="https://.../cancion.mp3"></label>
+      </details>
+
+      <details>
+        <summary data-i18n="b_sec_rsvp"></summary>
+        <div class="grid2">
+          <label><span data-i18n="b_rsvp_wa"></span><input name="rsvpWa" inputmode="tel" placeholder="18095551234"></label>
+          <label><span data-i18n="b_rsvp_email"></span><input name="rsvpEmail" type="email"></label>
+          <label><span data-i18n="b_rsvp_by"></span><input name="rsvpBy" type="date"></label>
+        </div>
+      </details>
+    </form>
+
+    <div class="b-output">
+      <div class="b-buttons">
+        <button class="btn btn-dark btn-lg" id="genBtn" data-i18n="b_generate"></button>
+        <button class="btn btn-wa btn-lg" id="orderBtn" data-i18n="b_order"></button>
+      </div>
+      <p class="note" data-i18n="b_demo_note"></p>
+
+      <div id="linkBox" class="link-box hidden">
+        <label><span data-i18n="b_link"></span>
+          <div class="copy-row"><input id="linkOut" readonly><button class="btn btn-line btn-sm" id="copyBtn" data-i18n="b_copy"></button></div>
+        </label>
+        <div class="b-buttons">
+          <a class="btn btn-wa btn-sm" id="shareWa" target="_blank" rel="noopener" data-i18n="b_share_wa"></a>
+          <a class="btn btn-line btn-sm" id="openLink" target="_blank" rel="noopener">↗</a>
+          <button class="btn btn-line btn-sm" id="qrBtn" data-i18n="b_qr"></button>
+          <button class="btn btn-line btn-sm admin-only hidden" id="jsonBtn" data-i18n="b_download"></button>
+        </div>
+        <div id="qrBox" class="qr-box hidden"></div>
+
+        <details class="guests">
+          <summary data-i18n="b_guests"></summary>
+          <p class="muted small" data-i18n="b_guests_hint"></p>
+          <textarea id="guestList" rows="4" placeholder="Familia Pérez | 4&#10;María López | 2"></textarea>
+          <button class="btn btn-dark btn-sm" id="makeGuests" data-i18n="b_make"></button>
+          <ul id="guestLinks" class="guest-links"></ul>
+        </details>
+      </div>
+
+      <details class="load-box">
+        <summary data-i18n="b_load"></summary>
+        <div class="copy-row"><input id="loadIn" placeholder="https://.../invitacion.html#d=..."><button class="btn btn-line btn-sm" id="loadBtn" data-i18n="b_load_btn"></button></div>
+        <button class="linkish" id="resetBtn" data-i18n="b_reset"></button>
+      </details>
+    </div>
+  </section>
+
+  <aside class="b-preview">
+    <div class="sticky">
+      <p class="preview-label" data-i18n="b_preview"></p>
+      <div class="phone phone-hero"><iframe id="preview" title="preview"></iframe></div>
+    </div>
+  </aside>
+</div>
+
+<script src="config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/themes.js"></script>
+<script src="assets/js/builder.js"></script>
+</body>
+</html>
