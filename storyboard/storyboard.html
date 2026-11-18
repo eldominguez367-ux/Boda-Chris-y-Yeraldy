@@ -1,0 +1,181 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Storyboard Chris y Yeraldy</title>
+<style>
+  /* Concepto: hoja de pruebas de cine. Una viñeta por escena, en orden, sobre papel rosa. */
+  :root {
+    --bg: #f3e4da; --ink: #4a1a20; --muted: #7d5a58; --card: #fbf1ea; --line: #dcbfb0; --accent: #8a2f3a; --note: #fff7d6; --shadow: rgba(74,26,32,.12);
+    --f-title: "Pinyon Script", cursive; --f-body: "Cormorant Garamond", Georgia, serif; --f-ui: "Jost", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #1d1214; --ink: #f2dcd2; --muted: #c4a39b; --card: #2a1a1d; --line: #4a3034; --accent: #e6a3a8; --note: #3a3320; --shadow: rgba(0,0,0,.4); color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #1d1214; --ink: #f2dcd2; --muted: #c4a39b; --card: #2a1a1d; --line: #4a3034; --accent: #e6a3a8; --note: #3a3320; --shadow: rgba(0,0,0,.4); color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 400 18px/1.55 var(--f-body); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px; }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  h1 { font: 400 clamp(2.6rem, 8vw, 4.2rem)/1.05 var(--f-title); margin: 0; color: var(--accent); text-wrap: balance; }
+  .sub { color: var(--muted); max-width: 62ch; margin: 8px 0 24px; }
+  .warn { background: var(--note); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; font: 14px/1.5 var(--f-ui); margin-bottom: 28px; }
+  .warn b { font-weight: 600; }
+  .data { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 24px; font: 14px/1.4 var(--f-ui); margin-bottom: 40px; padding: 18px 0; border-block: 1px solid var(--line); }
+  .data dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+  .data dd { margin: 0 0 8px; }
+  .todo { background: var(--note); padding: 0 5px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .scene { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .shots { display: flex; gap: 10px; align-content: flex-start; flex-wrap: wrap; }
+  .shot { margin: 0; flex: 1 1 100px; max-width: 220px; }
+  .shot img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 8px 20px -10px var(--shadow); background: #fff; }
+  .shot figcaption { font: 11px/1.3 var(--f-ui); color: var(--muted); margin-top: 5px; text-align: center; }
+  .scene h2 { font: 600 1.5rem/1.2 var(--f-body); margin: 0 0 4px; }
+  .tag { display: inline-block; font: 600 11px/1 var(--f-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .scene dl { margin: 12px 0 0; display: grid; grid-template-columns: 96px 1fr; gap: 6px 14px; font: 15px/1.5 var(--f-ui); }
+  .scene dt { color: var(--muted); }
+  .scene dd { margin: 0; min-width: 0; }
+  .text { font-family: var(--f-body); font-size: 1.1rem; font-style: italic; }
+  .end { margin-top: 36px; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; font: 15px/1.6 var(--f-ui); }
+  .end h2 { font: 600 1.4rem var(--f-body); margin: 0 0 8px; }
+  @media (max-width: 640px) { .scene { grid-template-columns: 1fr; gap: 16px; } .shot { max-width: 160px; } .scene dl { grid-template-columns: 1fr; gap: 0; } .scene dd { margin-bottom: 8px; } }
+</style>
+
+<div class="wrap">
+  <h1>Chris &amp; Yeraldy</h1>
+  <p class="sub">Storyboard de la invitación web: de la apertura del sobre lacrado hasta el cierre. Cada viñeta indica qué se ve, qué se mueve, cuánto dura y el texto real.</p>
+
+  <div class="warn"><b>Imágenes provisionales.</b> Las viñetas son miniaturas de 112 px generadas con Canva, y por eso se ven borrosas. Sirven para aprobar composición y estilo. Las versiones completas no se pueden descargar desde este entorno todavía. La imagen social 1200×630 se genera en la fase 3.</div>
+
+  <dl class="data">
+    <div><dt>Novios</dt><dd>Chris y Yeraldy · monograma C&amp;Y</dd></div>
+    <div><dt>Tratamiento</dt><dd>"ustedes" <span class="todo">TODO confirmar</span></dd></div>
+    <div><dt>Fecha y hora</dt><dd>sábado 22.05.27, 17:00 (America/Santo_Domingo) <span class="todo">TODO inventada</span></dd></div>
+    <div><dt>Lugar</dt><dd>Jardín Casa Hermosa, Calle Las Palmas 12, Santo Domingo <span class="todo">TODO ficticio</span></dd></div>
+    <div><dt>Confirmar antes del</dt><dd>22.04.27, modo demostración sin destino <span class="todo">TODO</span></dd></div>
+    <div><dt>Música</dt><dd>ninguna por ahora <span class="todo">TODO</span></dd></div>
+  </dl>
+
+  <section class="scene">
+    <div class="shots"><figure class="shot"><img src="img/sobre-cerrado.jpg" alt="Sobre vino oscuro con flores en relieve y sello de cera rosa con monograma"><figcaption>sobre-cerrado</figcaption></figure></div>
+    <div>
+      <span class="tag">Escena 1 · Pantalla inicial</span>
+      <h2>El sobre cerrado</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Sobre a pantalla completa (100svh), sin scroll. Sello rosa empolvado con "C&amp;Y".</dd>
+        <dt>Se mueve</dt><dd>El sello pulsa muy suave. Botón "Saltar" discreto arriba.</dd>
+        <dt>Duración</dt><dd>Hasta que la persona toca el sello.</dd>
+        <dt>Texto</dt><dd class="text">Toca el sello para abrir</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots">
+      <figure class="shot"><img src="img/sobre-cerrado.jpg" alt="Primer fotograma: sobre cerrado"><figcaption>0,0 s</figcaption></figure>
+      <figure class="shot"><img src="img/sobre-abierto.jpg" alt="Último fotograma: sobre abierto con luz cálida"><figcaption>8,0 s</figcaption></figure>
+    </div>
+    <div>
+      <span class="tag">Escena 2 · Video del sobre</span>
+      <h2>La apertura</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Cámara fija. Un brillo recorre el sello, las flores se encienden en cobre, la solapa pasa de vino a rosa y se abre en V. Estalla un núcleo de luz y las flores reaparecen como líneas doradas.</dd>
+        <dt>Se mueve</dt><dd>Video de 8 s sin audio. Empieza en el mismo gesto que arranca la música (si hay). A 0,8 s del final se funde a la portada.</dd>
+        <dt>Duración</dt><dd>8 s</dd>
+        <dt>Texto</dt><dd class="text">Ninguno</dd>
+        <dt>Si falla</dt><dd>Si el video no arranca en 4 s: fundido del sobre cerrado al abierto.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots"><figure class="shot"><img src="img/portada.jpg" alt="Arco de piedra con flores, lago brumoso y dos cisnes formando un corazón"><figcaption>portada</figcaption></figure></div>
+    <div>
+      <span class="tag">Escena 3 · Portada</span>
+      <h2>El arco y los cisnes</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Arco de piedra con lago brumoso y cisnes. El centro, claro, lleva los textos en granate.</dd>
+        <dt>Se mueve</dt><dd>Los textos entran escalonados tras el fundido. Pétalos flotan lentos (15–25). La flecha oscila.</dd>
+        <dt>Duración</dt><dd>Entrada de unos 1,5 s, luego scroll libre.</dd>
+        <dt>Texto</dt><dd class="text">Nuestra boda · 22.05.27 · Chris &amp; Yeraldy · Desliza</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots">
+      <figure class="shot"><img src="img/flores-transicion.jpg" alt="Guirnalda de rosas granate, rosa y crema"><figcaption>flores-transicion</figcaption></figure>
+      <figure class="shot"><img src="img/textura-papel.jpg" alt="Textura de papel rosa pálido"><figcaption>textura-papel</figcaption></figure>
+    </div>
+    <div>
+      <span class="tag">Escena 4 · Invitación</span>
+      <h2>La guirnalda sobre el papel</h2>
+      <dl>
+        <dt>Se ve</dt><dd>La guirnalda cuelga sobre el papel rosa. Todo es una sola hoja continua, sin tarjetas.</dd>
+        <dt>Se mueve</dt><dd>Parallax leve de la guirnalda. El texto aparece con opacidad y 20 px de desplazamiento, en cascada.</dd>
+        <dt>Duración</dt><dd>Ligada al scroll.</dd>
+        <dt>Texto</dt><dd class="text">Chris &amp; Yeraldy los invitan a celebrar con ellos este día tan especial</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots"><figure class="shot"><img src="img/papel-rasgado.jpg" alt="Bordes de papel rasgado acuarelado en rosa y crema"><figcaption>papel-rasgado</figcaption></figure></div>
+    <div>
+      <span class="tag">Escena 5 · Cuenta atrás</span>
+      <h2>La celebración comienza en</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Un borde de papel rasgado separa la sección. Cuatro bloques: Días, Horas, Minutos, Segundos, con cifras de ancho fijo.</dd>
+        <dt>Se mueve</dt><dd>Cada dígito sale hacia arriba y entra desde abajo con ligero desenfoque (menos de 300 ms). Se calcula contra el 22.05.27 a las 17:00, hora de Santo Domingo.</dd>
+        <dt>Duración</dt><dd>Continua.</dd>
+        <dt>Texto</dt><dd class="text">La celebración comienza en · Días · Horas · Minutos · Segundos. A cero: ¡Hoy es el gran día!</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots"><figure class="shot"><img src="img/rosa.jpg" alt="Rosa granate vista desde arriba"><figcaption>rosa</figcaption></figure></div>
+    <div>
+      <span class="tag">Escena 6 · Programa</span>
+      <h2>Programa del día</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Línea vertical fina con un rombo por acto: hora a la izquierda, acto a la derecha.</dd>
+        <dt>Se mueve</dt><dd>La rosa baja por la línea ligada al scroll, del primer al último rombo, con una rotación leve.</dd>
+        <dt>Duración</dt><dd>Ligada al scroll.</dd>
+        <dt>Texto</dt><dd class="text">16:30 Llegada de invitados · 17:00 Ceremonia · 18:00 Brindis · 19:00 Cena · 21:00 Baile <span class="todo">TODO inventado</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots">
+      <figure class="shot"><img src="img/lugar.jpg" alt="Ilustración en sepia de una casa con arcos y jardín"><figcaption>lugar</figcaption></figure>
+      <figure class="shot"><img src="img/petalos.jpg" alt="Pétalos dorados y crema"><figcaption>petalos</figcaption></figure>
+    </div>
+    <div>
+      <span class="tag">Escena 7 · Ubicación</span>
+      <h2>Dónde será</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Nombre del lugar, fecha, hora y dirección. Pétalos dorados a los lados, sin tapar texto.</dd>
+        <dt>Se mueve</dt><dd>Los pétalos se balancean con parallax. La ilustración sube desde abajo al hacer scroll.</dd>
+        <dt>Duración</dt><dd>Ligada al scroll.</dd>
+        <dt>Texto</dt><dd class="text">Ubicación · Jardín Casa Hermosa · sábado 22 de mayo de 2027, 17:00 · Calle Las Palmas 12, Santo Domingo · Cómo llegar <span class="todo">TODO ficticio</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="scene">
+    <div class="shots"></div>
+    <div>
+      <span class="tag">Escena 8 · Confirmación y cierre</span>
+      <h2>Confirmar asistencia y despedida</h2>
+      <dl>
+        <dt>Se ve</dt><dd>Formulario sobre la misma hoja: nombre, asistencia, acompañantes, alergias y mensaje. Botón para añadir al calendario (.ics). Cierre con el monograma C&amp;Y.</dd>
+        <dt>Se mueve</dt><dd>Estados de envío, éxito y error. Sin destino configurado, un aviso de demostración y no finge enviar.</dd>
+        <dt>Duración</dt><dd>Ligada al scroll.</dd>
+        <dt>Texto</dt><dd class="text">Confirma tu asistencia antes del 22.04.27 · Añadir al calendario · C&amp;Y</dd>
+      </dl>
+    </div>
+  </section>
+
+  <div class="end">
+    <h2>Para aprobar</h2>
+    <p>¿Apruebas este recorrido y el estilo del sobre, el arco y los pétalos? Con tu visto bueno, en la fase 3 genero el video del sobre, descargo las imágenes en alta resolución y construyo la web. Si quieres cambios, dime qué escena y regenero solo eso.</p>
+  </div>
+</div>
