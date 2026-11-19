@@ -4,7 +4,9 @@ import json, re
 def iniciales(d):
     return (d["novios"]["n1"][:1] + "&" + d["novios"]["n2"][:1]).upper()
 
-def config_js(formato, d):
+MUSICA_DEFECTO = "audio/musica.mp3"  # pieza instrumental incluida en cada formato
+
+def config_js(formato, d, musica_defecto=MUSICA_DEFECTO):
     """Devuelve el contenido de js/config.js para el formato dado a partir del JSON del cliente."""
     cfg = dict(d)
     if formato == "sobre":  # el formato del sobre usa un único lugar y no tiene hashtag
@@ -19,6 +21,11 @@ def config_js(formato, d):
             "musica": d.get("musica", {"src": "", "volumen": 0.55}),
             "todos": d.get("todos", []),
         }
+    m = dict(cfg.get("musica") or {})
+    if musica_defecto and not m.get("src"):
+        m["src"] = musica_defecto
+    m.setdefault("volumen", 0.5)
+    cfg["musica"] = m
     return "/* Generado por la plataforma. Edita los datos y vuelve a generar, o edita este archivo. */\nwindow.BODA = " + json.dumps(cfg, ensure_ascii=False, indent=2) + ";\n"
 
 def reemplazar_nombres(html, d, base=("Valentina", "Sebastián")):

@@ -1,0 +1,26 @@
+{{HEAD}}
+<body>
+<main class="page cartel">
+  <div class="draft" data-borrador hidden>Borrador · hay datos de ejemplo</div>
+  <header class="cab">
+    <p class="rv a">Reserven la fecha</p>
+    <p class="rv dia" data-bind="dia"></p>
+    <p class="rv mes"><span data-bind="mes-nombre"></span> <span data-bind="anio"></span></p>
+    <p class="rv sem" data-bind="dia-semana"></p>
+  </header>
+  <figure class="arco rv">
+    <img src="img/foto-600.webp" srcset="img/foto-600.webp 600w, img/foto-1000.webp 1000w" sizes="(max-width: 480px) 76vw, 360px" alt="Valentina y Sebastián abrazados con los ojos cerrados en un campo dorado" width="1000" height="1250" fetchpriority="high">
+  </figure>
+  <section class="nombres rv">
+    <h1><span data-bind="n1"></span> <span class="amp">&amp;</span> <span data-bind="n2"></span></h1>
+    <p class="ciudad" data-bind="cer-ciudad"></p>
+  </section>
+  <section class="cuenta">
+    {{CUENTA}}
+  </section>
+  <section class="pie">
+    <button class="btn solid rv" data-ics type="button">Añadir al calendario</button>
+    <p class="rv mini">La invitación completa llegará muy pronto.</p>
+  </section>
+</main>
+{{FOOT}}

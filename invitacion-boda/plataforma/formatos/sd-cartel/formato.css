@@ -1,0 +1,13 @@
+:root { --fondo: #F2E9DC; --texto: #3B2A22; --acento: #A4542F; --acento-t: #fff; --linea: rgba(164, 84, 47, .35); --fondo-pagina: #DCCFBB; }
+.cartel { padding: 40px 22px 54px; text-align: center; border: 10px solid var(--fondo); outline: 1.5px solid var(--acento); outline-offset: -22px; }
+.a { font-size: 1rem; letter-spacing: .42em; text-transform: uppercase; font-weight: 600; margin-bottom: 0; }
+.dia { font: 500 clamp(7rem, 38vw, 10rem)/.9 var(--f-titulo); color: var(--acento); margin: 6px 0 0; font-variant-numeric: tabular-nums; }
+.mes { font: 600 1.7rem var(--f-titulo); letter-spacing: .34em; text-transform: uppercase; margin: 6px 0 0; }
+.sem { font-size: 1.1rem; letter-spacing: .3em; text-transform: uppercase; opacity: .8; margin-top: 2px; }
+.arco { margin: 26px auto 22px; width: min(76%, 330px); border-radius: 999px 999px 14px 14px; overflow: hidden; border: 3px solid #fff; box-shadow: 0 20px 40px -20px rgba(59, 42, 34, .6); }
+.arco img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.nombres h1 { font: 400 clamp(3rem, 15vw, 4.4rem)/1.05 var(--f-script); color: var(--acento); } .amp { font-size: .65em; }
+.ciudad { font-size: 1.05rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
+.cuenta { margin: 22px 0 28px; padding-block: 12px; border-block: 1px solid var(--linea); } .cd-b + .cd-b { border-left: 1px solid var(--linea); }
+.num { color: var(--acento); font-size: 2.3rem; }
+.mini { font-size: .95rem; opacity: .8; margin-top: 14px; }

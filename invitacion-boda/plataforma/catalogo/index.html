@@ -4,97 +4,116 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eterna · Invitaciones de boda digitales</title>
-<meta name="description" content="Elige el formato de tu invitación de boda digital: sobre lacrado, fotográfica, botánica, nocturna, de playa o en formato historia. Todo en español, con confirmación de asistencia y cuenta atrás.">
+<meta name="description" content="Invitaciones de boda digitales hechas para abrirse: sobres, fotos, jardines y cielos nocturnos. Tus nombres, tus fotos y tus lugares, listas en 48 horas y en español.">
 <meta property="og:title" content="Eterna · Invitaciones de boda digitales">
-<meta property="og:description" content="7 formatos de invitación animada en español. Elige el tuyo.">
-<meta name="theme-color" content="#2f3a31">
+<meta property="og:description" content="9 diseños de invitación animada en español. Elige el tuyo, lo personalizamos y compartes un solo enlace.">
+<meta name="theme-color" content="#5C1F3A">
+<link rel="preload" href="fonts/playfair-display-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="catalogo.css">
 </head>
-<body>
-<header class="cab">
+<body data-pagina="inicio">
+<div class="promo" id="promo"><span>Entrega en 48 horas · Cambios incluidos · Pago único, sin suscripciones</span><button type="button" id="promoX" aria-label="Cerrar aviso">×</button></div>
+<header class="cab" id="cab">
   <div class="caja cab-in">
-    <a href="#" class="logo" data-marca>Eterna</a>
-    <nav aria-label="Principal"><a href="#formatos">Formatos</a><a href="#como">Cómo funciona</a><a href="#incluye">Qué incluye</a><a href="#faq">Preguntas</a></nav>
-    <a class="btn solid peq" id="cabWa" href="#" target="_blank" rel="noopener">Escríbenos</a>
+    <a href="index.html" class="logo" data-marca>Eterna</a>
+    <nav aria-label="Principal"><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="#como">Cómo funciona</a><a href="#faq">Preguntas</a></nav>
+    <div class="cab-der"><a class="link" id="cabWa" href="#" target="_blank" rel="noopener">Escríbenos</a><button class="btn solid" type="button" data-pedido>Empezar</button><button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false"><i></i><i></i></button></div>
   </div>
 </header>
 
 <main>
-  <section class="portada">
-    <div class="caja portada-in">
+  <section class="hero">
+    <img class="obj o0" src="img/obj-0.webp" alt="" aria-hidden="true"><img class="obj o1" src="img/obj-1.webp" alt="" aria-hidden="true"><img class="obj o2" src="img/obj-2.webp" alt="" aria-hidden="true">
+    <div class="caja hero-in">
       <div>
-        <p class="sobre-t">Invitaciones de boda digitales</p>
-        <h1>La invitación que sus invitados van a querer abrir</h1>
-        <p class="lead">Elijan entre 7 formatos animados, todos en español, con cuenta atrás, mapas, confirmación de asistencia y calendario. Se abren desde el móvil, sin descargar nada.</p>
-        <div class="acciones"><a class="btn solid grande" href="#formatos">Ver los formatos</a><a class="btn grande" href="#como">Cómo funciona</a></div>
-        <ul class="datos"><li><b>7</b><span>formatos distintos</span></li><li><b>48 h</b><span>entrega</span></li><li><b>100 %</b><span>en español</span></li></ul>
+        <p class="eyebrow">Invitaciones de boda digitales</p>
+        <h1>Tu invitación de boda digital, hecha para abrirse.</h1>
+        <p class="lead">Elige un diseño que te enamore. Lo personalizamos con tus nombres, tus fotos y los datos de tu boda, y lo compartes con un solo enlace desde el móvil.</p>
+        <div class="acciones"><a class="btn solid grande" href="#disenos">Ver los diseños →</a><a class="btn enlace" href="#planes">Comparar planes</a></div>
+        <p class="nota">Desde <span data-desde></span> · Pago único · Entrega en 48 horas · Todo en español</p>
       </div>
-      <div class="pila" aria-hidden="true">
-        <div class="tel t1"><iframe tabindex="-1" loading="eager" data-fmt="sobre" title=""></iframe></div>
-        <div class="tel t2"><iframe tabindex="-1" loading="lazy" data-fmt="fotografico" title=""></iframe></div>
-        <div class="tel t3"><iframe tabindex="-1" loading="lazy" data-fmt="celestial" title=""></iframe></div>
+      <div class="hero-vis">
+        <img class="obj o3" src="img/obj-3.webp" alt="" aria-hidden="true"><img class="obj o4" src="img/obj-4.webp" alt="" aria-hidden="true"><img class="obj o5" src="img/obj-5.webp" alt="" aria-hidden="true">
+        <div class="tel"><div class="pantalla"><iframe id="heroFrame" title="Demostración de una invitación" tabindex="-1" loading="eager"></iframe></div></div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="formatos">
+  <section class="sec" id="disenos">
     <div class="caja">
-      <div class="cabeza"><h2>Elijan su formato</h2><p>Cada uno se personaliza con sus nombres, su fecha, sus lugares y sus fotos.</p></div>
+      <div class="cabeza"><h2 id="tituloDisenos">Diseños hechos a tu medida</h2><p>Cada uno se adapta a tus colores, tus fotos y tu historia. Toca uno para probarlo.</p></div>
       <div class="filtros" id="filtros" role="group" aria-label="Filtrar por estilo"></div>
       <div class="rejilla" id="rejilla"></div>
     </div>
   </section>
 
-  <section class="sec alt" id="como">
+  <section class="sec alt" id="savethedate">
     <div class="caja">
-      <div class="cabeza"><h2>Así de fácil</h2></div>
+      <div class="cabeza"><h2>Save the Date</h2><p>Avisa de la fecha antes de que llegue la invitación. Desde <span data-desde-sd></span>.</p></div>
+      <div class="rejilla sd" id="rejillaSd"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="como">
+    <div class="caja">
+      <div class="cabeza"><img class="pers paloma" src="img/personaje-paloma.webp" alt="Paloma mensajera con una carta en el pico" width="150" height="130" loading="lazy"><h2>Así de sencillo</h2><p>Sin plantillas que rellenar tú solo ni suscripciones.</p></div>
       <ol class="pasos">
-        <li><b>1</b><h3>Eligen el formato</h3><p>Prueben la demostración de cada uno en su móvil.</p></li>
-        <li><b>2</b><h3>Nos mandan los datos</h3><p>Nombres, fecha, lugares, programa y sus fotos.</p></li>
-        <li><b>3</b><h3>La personalizamos</h3><p>La recibirán en 48 horas y pueden pedir los cambios que quieran.</p></li>
-        <li><b>4</b><h3>La comparten</h3><p>Un solo enlace por WhatsApp o redes. Las confirmaciones les llegan directo.</p></li>
+        <li><b>01</b><h3>Eliges</h3><p>Prueba cada diseño en tu móvil y elige el que más se parezca a tu boda y al nivel de personalización que quieres.</p></li>
+        <li><b>02</b><h3>La creamos</h3><p>Nos mandas tus datos y fotos a tu ritmo. Nuestro equipo la prepara y te enseña un borrador privado para que pidas los cambios.</p></li>
+        <li><b>03</b><h3>Compartes un enlace</h3><p>Una sola invitación para todos tus invitados, por WhatsApp o redes. Las confirmaciones te llegan directo.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="sec" id="incluye">
+  <section class="sec alt" id="planes">
     <div class="caja">
-      <div class="cabeza"><h2>Todos los formatos incluyen</h2></div>
-      <ul class="incl">
-        <li><h3>Cuenta atrás</h3><p>Días, horas, minutos y segundos hasta la boda, con la hora exacta de su zona.</p></li>
-        <li><h3>Confirmación de asistencia</h3><p>Nombre, acompañantes, alergias y mensaje, directo a su WhatsApp o correo.</p></li>
-        <li><h3>Mapas y calendario</h3><p>Botón “Cómo llegar” y archivo para añadir la fecha al calendario.</p></li>
-        <li><h3>Programa del día</h3><p>Hora por hora, para que nadie se pierda nada.</p></li>
-        <li><h3>Pensada para el móvil</h3><p>Se ve perfecta en cualquier pantalla y en escritorio queda centrada.</p></li>
-        <li><h3>Privada</h3><p>No aparece en buscadores: solo la ven quienes reciben el enlace.</p></li>
-      </ul>
+      <div class="cabeza"><h2>Un diseño para cada boda, tres niveles de personalización</h2><p>Elige tu diseño y cuánto quieres que lo hagamos tuyo.</p></div>
+      <div class="planes" id="planes-lista"></div>
+      <p class="nota-planes">Pago único por boda. Sin suscripciones ni costes ocultos. El enlace queda en línea al menos seis meses después de la boda.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="invitados">
+    <div class="caja invitados">
+      <div class="stack-inv"><img class="pers invitados" src="img/personaje-invitados.webp" alt="Dos invitados mirando una invitación en el móvil" width="250" height="190" loading="lazy"><div class="tel" style="margin-inline:auto"><div class="pantalla"><iframe id="invFrame" title="Lo que ven tus invitados" tabindex="-1" loading="lazy"></iframe></div></div></div>
+      <div>
+        <p class="eyebrow">Lo que ven tus invitados</p>
+        <h2>Todo lo que necesitan. Nada que les sobre.</h2>
+        <p style="color:var(--suave)">No hay una plantilla fija: eliges las secciones que quieres y el orden en el que aparecen.</p>
+        <ul class="lista-sec">
+          <li><b>01</b><span><strong>Cuenta atrás</strong>Días, horas, minutos y segundos hasta la boda, con tu hora exacta.</span></li>
+          <li><b>02</b><span><strong>Ceremonia y recepción</strong>Con el lugar, la hora y un botón “Cómo llegar”.</span></li>
+          <li><b>03</b><span><strong>Programa del día</strong>Hora por hora, para que nadie se pierda nada.</span></li>
+          <li><b>04</b><span><strong>Confirmación de asistencia</strong>Nombre, acompañantes, alergias y mensaje, directo a tu WhatsApp o correo.</span></li>
+          <li><b>05</b><span><strong>Añadir al calendario</strong>Un toque y la fecha queda guardada en su móvil.</span></li>
+          <li><b>06</b><span><strong>Fotos, hashtag y playlist</strong>Para que compartan sus fotos y te pidan sus canciones.</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="sec alt" id="faq">
     <div class="caja angosta">
       <div class="cabeza"><h2>Preguntas frecuentes</h2></div>
-      <details><summary>¿Cómo la reciben mis invitados?</summary><p>Reciben un enlace único que pueden abrir desde WhatsApp, correo o redes. No hay que instalar nada.</p></details>
-      <details><summary>¿Puedo cambiar el formato después?</summary><p>Sí. Los datos son los mismos en todos los formatos, así que podemos cambiar de diseño sin empezar de cero.</p></details>
-      <details><summary>¿Qué fotos necesito?</summary><p>Entre 2 y 6 fotos suyas en buena calidad. Si no tienen, podemos crear ilustraciones del estilo elegido.</p></details>
-      <details><summary>¿Cuánto tiempo queda en línea?</summary><p>Al menos seis meses después de la boda, para que la guarden de recuerdo.</p></details>
-      <details><summary>¿Se pueden poner nombres de invitados?</summary><p>Sí: se puede personalizar el enlace con el nombre de cada invitado.</p></details>
+      <details><summary>¿Cómo la reciben mis invitados?</summary><p>Recibes un enlace único para enviar por WhatsApp, correo o redes. Se abre en cualquier móvil o computadora, sin instalar nada.</p></details>
+      <details><summary>¿Qué diferencia hay entre los tres planes?</summary><p>Esencial es el diseño tal cual, con tus datos y tus fotos. Premium lo rediseñamos alrededor de tu boda: tus colores, ilustraciones y un sobre o portada con tus iniciales. Excelencia es un diseño exclusivo, creado desde cero.</p></details>
+      <details><summary>¿Cómo se paga?</summary><p>Un único pago por boda, sin suscripciones. Lo acordamos por WhatsApp: transferencia, tarjeta o PayPal. Empezamos en cuanto lo confirmamos.</p></details>
+      <details><summary>¿Cuánto tarda?</summary><p>El plan Esencial, 48 horas desde que nos mandas tus datos. Premium, unos 7 días. Excelencia, unos 14 días.</p></details>
+      <details><summary>¿Puedo cambiar cosas después?</summary><p>Sí. Los cambios de la ronda incluida en tu plan son gratis, y si cambia un horario o un lugar, actualizamos la invitación y el mismo enlace muestra lo nuevo.</p></details>
+      <details><summary>¿Se puede en otro idioma?</summary><p>Todos los diseños vienen en español. En los planes Premium y Excelencia podemos añadir otros idiomas para tus invitados.</p></details>
+      <details><summary>¿Puedo ponerle el nombre de cada invitado?</summary><p>Sí, en el plan Premium o superior: cada invitado ve su nombre y los lugares reservados para él.</p></details>
     </div>
+  </section>
+
+  <section class="cierre-cta">
+    <div class="caja"><img class="pers novios" src="img/personaje-novios.webp" alt="Ilustración de dos novios de la mano" width="180" height="270" loading="lazy"><h2>Tu invitación, hecha a mano para tu boda</h2><p>Cuéntanos tu fecha y te recomendamos el diseño que mejor encaja.</p><button class="btn solid grande" type="button" data-pedido>Empezar mi invitación</button></div>
   </section>
 </main>
 
-<footer class="pie"><div class="caja pie-in"><span class="logo luz" data-marca>Eterna</span><p>Invitaciones de boda digitales, hechas con cariño.</p></div></footer>
+<footer class="pie"><div class="caja"><div class="pie-in"><div><span class="logo" data-marca>Eterna</span><p>Invitaciones de boda digitales, hechas con cariño.</p></div><nav><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="#faq">Preguntas</a></nav></div><p class="leg">Las fotos de las demostraciones son de personas ficticias creadas con IA.</p></div></footer>
 
-<dialog id="modal" aria-labelledby="modalT">
-  <div class="modal-in">
-    <button class="cierra" id="cierra" type="button" aria-label="Cerrar">×</button>
-    <div class="modal-tel"><iframe id="modalFrame" title="Demostración del formato"></iframe></div>
-    <div class="modal-info">
-      <h2 id="modalT"></h2><p id="modalDesc"></p><ul id="modalInc"></ul><p class="nota" id="modalNota"></p>
-      <div class="acciones"><a class="btn solid grande" id="modalElegir" href="#" target="_blank" rel="noopener">Elegir este formato</a><a class="btn grande" id="modalAbrir" href="#" target="_blank" rel="noopener">Abrir en pantalla completa</a></div>
-    </div>
-  </div>
-</dialog>
+<a class="ayuda" id="ayuda" href="#" target="_blank" rel="noopener" aria-label="Pregúntale a Paloma por WhatsApp"><img src="img/personaje-paloma.webp" alt="" width="54" height="48"><span>¿Te ayudo a elegir?</span></a>
+<div class="barra" id="barra"><span class="txt">Tu invitación, hecha a mano</span><button type="button" data-pedido>Empezar mi invitación</button><i class="sep"></i><a id="barraWa" href="#" target="_blank" rel="noopener">¿Preguntas?</a></div>
 
 <script src="config.js"></script>
 <script src="datos-catalogo.js"></script>

@@ -55,3 +55,18 @@ datos/         datos de ejemplo y de clientes
 herramientas/  construir.py y generar_cliente.py
 ```
 Para crear un formato nuevo: copia una carpeta de `formatos/`, cambia el HTML/CSS, añade su arte en `construir.py` (ARTE y FORMATOS) y vuelve a construir.
+
+---
+## Novedades: apertura tipo carta, música, personajes y precios
+
+**Apertura tipo carta (todos los formatos).** Al entrar, el sobre llena toda la pantalla; al tocar el sello (con las iniciales de los novios) suena la música y se abre con un video de 8 s antes de mostrar la invitación. Hay botón "Saltar", botón de música (abajo a la derecha) y respaldo con fundido si el video falla o el usuario pide menos movimiento. El módulo es `nucleo/carta.js` + `nucleo/carta.css`; el formato `sobre` tiene la suya propia.
+Cada formato usa un estilo de sobre (`ESTILO_CARTA` en `herramientas/construir.py`): oliva, marfil, salvia, noche, arena y vino. Las iniciales se escriben encima del sello como texto, así que **no hace falta regenerar el video por cliente** (salvo en el formato `sobre`).
+
+**Música.** Cada formato lleva una pieza instrumental (piano, guitarra o cuerdas, 75 s en bucle) en `audio/musica.mp3`, generada con IA. Para cambiarla, pon otro archivo en `musica.src` de los datos del cliente. Comprueba que tu plan de Higgsfield permite el uso comercial de esa música antes de vender.
+
+**Personajes.** Novios, paloma mensajera e invitados ilustrados en acuarela, usados en la página madre.
+
+**Precios** (en `herramientas/construir.py`, `PLANES` y `PRECIOS_SD`, en US$): Esencial 129 · Premium 399 · Excelencia 699 · Save the Date 49 / 89. La moneda se cambia en `catalogo/config.js`.
+
+**Arte original.** Las imágenes originales (PNG) de los sobres, objetos y personajes no están en el repositorio por su peso: están en tu galería de Higgsfield. Los videos fuente están comprimidos en `assets/sobres/*.mp4`.
+**Miniaturas.** `herramientas/miniaturas.js` genera las capturas del catálogo (sirve `dist/` en el puerto 8770 y ejecútalo).

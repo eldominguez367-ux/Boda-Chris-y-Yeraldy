@@ -3,3 +3,7 @@ assets/canva-export/
 diseno2/dist/
 plataforma/dist/
 plataforma/salida/
+plataforma/assets/sobres/*.png
+plataforma/assets/sobres/mesa/
+plataforma/assets/personaje-*.png
+plataforma/assets/objetos.png

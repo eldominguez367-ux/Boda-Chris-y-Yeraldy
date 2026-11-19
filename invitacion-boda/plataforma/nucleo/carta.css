@@ -1,0 +1,22 @@
+/* Apertura tipo carta: sobre a pantalla completa, sello con monograma, video y música */
+.carta-ov { position: fixed; inset: 0; z-index: 1000; background: #120a0c; display: flex; justify-content: center; transition: opacity .8s ease; }
+.carta-ov.fuera { opacity: 0; pointer-events: none; } .carta-ov.quitado { display: none; }
+body.carta-bloqueado { overflow: hidden; }
+.carta-col { position: relative; width: 100%; max-width: 480px; height: 100svh; overflow: hidden; background: #1b1114; }
+.carta-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.carta-abierto { opacity: 0; }
+.carta-video { opacity: 0; transition: opacity .15s linear; }
+.carta-ov.reproduciendo .carta-video { opacity: 1; }
+.carta-sello { position: absolute; left: 50%; top: 50%; width: clamp(54px, 15vw, 76px); aspect-ratio: 1; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: transparent; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; display: grid; place-items: center; }
+.carta-sello .anillo { position: absolute; inset: -22%; border-radius: 50%; border: 2px solid rgba(255, 236, 200, .85); animation: carta-pulso 2.6s ease-in-out infinite; }
+.carta-sello .mono { position: relative; font: 400 clamp(1.15rem, 5.6vw, 1.7rem)/1 "Pinyon Script", "Allura", cursive; color: var(--carta-mono, #a4655a); text-shadow: 0 1px 0 rgba(255, 240, 230, .5), 0 -1px 0 rgba(0, 0, 0, .35); transition: opacity .3s; }
+.carta-sello:focus-visible { outline: 3px solid #ffe9b8; outline-offset: 8px; }
+.carta-ov.abriendo .carta-sello .mono, .carta-ov.abriendo .carta-hint, .carta-ov.abriendo .anillo { opacity: 0; transition: opacity .35s; }
+.carta-ov.abriendo .carta-sello { pointer-events: none; }
+@keyframes carta-pulso { 0%, 100% { transform: scale(1); opacity: .4; } 50% { transform: scale(1.14); opacity: .95; } }
+.carta-hint { position: absolute; left: 0; right: 0; bottom: max(8vh, 52px); margin: 0; text-align: center; color: #fff3dc; font: 500 1.1rem/1.3 "Cormorant Garamond", Georgia, serif; letter-spacing: .1em; text-shadow: 0 2px 12px rgba(0, 0, 0, .8); padding: 0 20px; }
+.carta-saltar { position: absolute; top: max(14px, env(safe-area-inset-top)); right: 14px; z-index: 3; background: rgba(20, 12, 14, .55); color: #fff3dc; border: 1px solid rgba(255, 240, 220, .4); border-radius: 999px; padding: 7px 16px; font: 500 .95rem "Cormorant Garamond", Georgia, serif; letter-spacing: .06em; cursor: pointer; backdrop-filter: blur(4px); }
+.carta-musica { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: 50px; height: 50px; border-radius: 50%; border: 0; background: rgba(40, 22, 28, .88); color: #fff; display: grid; place-items: center; cursor: pointer; z-index: 900; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); backdrop-filter: blur(6px); }
+.carta-musica .i-play { display: none; } .carta-musica[aria-pressed=false] .i-play { display: block; } .carta-musica[aria-pressed=false] .i-pause { display: none; }
+html.framed .draft { top: 34px; }
+@media (prefers-reduced-motion: reduce) { .carta-sello .anillo { animation: none; } .carta-ov { transition-duration: .4s; } }

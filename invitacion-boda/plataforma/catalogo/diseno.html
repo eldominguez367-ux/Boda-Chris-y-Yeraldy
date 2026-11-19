@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diseño · Eterna</title>
+<meta name="description" content="Prueba esta invitación de boda digital como lo haría un invitado y pide la tuya.">
+<meta name="theme-color" content="#5C1F3A">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body data-pagina="diseno">
+<div class="promo" id="promo"><span>Entrega en 48 horas · Cambios incluidos · Pago único, sin suscripciones</span><button type="button" id="promoX" aria-label="Cerrar aviso">×</button></div>
+<header class="cab" id="cab">
+  <div class="caja cab-in">
+    <a href="index.html" class="logo" data-marca>Eterna</a>
+    <nav aria-label="Principal"><a href="index.html#disenos">Diseños</a><a href="index.html#savethedate">Save the Date</a><a href="index.html#planes">Planes y precios</a><a href="index.html#como">Cómo funciona</a><a href="index.html#faq">Preguntas</a></nav>
+    <div class="cab-der"><a class="link" id="cabWa" href="#" target="_blank" rel="noopener">Escríbenos</a><button class="btn solid" type="button" data-pedido>Empezar</button><button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false"><i></i><i></i></button></div>
+  </div>
+</header>
+
+<main class="caja" id="contenido">
+  <p class="migas"><a href="index.html">Colección</a> / <a href="index.html#disenos" id="migasTipo">Invitaciones</a> / <span id="migasNombre"></span></p>
+  <div class="ficha">
+    <div class="demo">
+      <span class="etiqueta">Demo interactiva</span>
+      <div class="tel"><div class="pantalla" id="pantalla"><iframe id="demoFrame" title="Demostración interactiva" loading="eager"></iframe></div></div>
+      <p class="pista"><b>Pruébala tú mismo</b>Toca, desliza y responde como lo haría un invitado.</p>
+      <div class="tira" id="tira" role="group" aria-label="Secciones de la invitación"></div>
+      <button class="btn enlace" type="button" id="verEnVivo" hidden>Volver a la demo en vivo</button>
+      <p class="peq" style="text-align:center;max-width:36ch">Esto es un ejemplo. Tu invitación tendrá las secciones que elijas, con tus nombres y tus fotos.</p>
+    </div>
+    <div class="info">
+      <p class="eyebrow" id="tipoEtiqueta">Invitación digital</p>
+      <h1 id="nombre"></h1>
+      <p class="frase" id="frase"></p>
+      <p class="desde">Desde</p>
+      <p class="precio-g" id="precio"></p>
+      <p class="sub" id="subprecio">Pago único · tres niveles de personalización</p>
+      <button class="btn solid grande ancho" type="button" data-pedido>Personalizar esta invitación</button>
+      <p class="garantias"><span>✓ Personalizada por nuestro equipo</span><span>✓ Cambios incluidos</span></p>
+      <div class="caja-h">
+        <p class="eyebrow">Hecha a mano, solo para ti</p>
+        <h2>Esta es tu invitación</h2>
+        <div class="pestanas" role="tablist" id="pestanas"><button type="button" role="tab" class="on" data-p="quien">Quién la crea</button><button type="button" role="tab" data-p="secciones">Tus secciones</button><button type="button" role="tab" data-p="incluye">Qué incluye</button></div>
+        <ul class="pts" id="panel"></ul>
+      </div>
+      <details style="margin-top:14px"><summary>Descripción del diseño</summary><p id="desc"></p></details>
+      <details><summary>Plazos y entrega</summary><p>Esencial: 48 horas. Premium: unos 7 días. Excelencia: unos 14 días, desde que nos mandas tus datos y tus fotos.</p></details>
+      <details><summary>¿Y si cambia algo después?</summary><p>Actualizamos la invitación y el mismo enlace muestra la información nueva. Tus invitados no tienen que hacer nada.</p></details>
+    </div>
+  </div>
+
+  <section class="relacionados" style="padding-bottom:90px">
+    <h2>Más diseños que te pueden gustar</h2>
+    <div class="rejilla" id="relacionados"></div>
+  </section>
+</main>
+
+<div class="barra" id="barra"><span class="txt" id="barraTxt"></span><button type="button" data-pedido>Personalizar</button><i class="sep"></i><a id="barraWa" href="#" target="_blank" rel="noopener">¿Preguntas?</a></div>
+
+<script src="config.js"></script>
+<script src="datos-catalogo.js"></script>
+<script src="catalogo.js"></script>
+</body>
+</html>
