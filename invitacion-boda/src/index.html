@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valentina &amp; Sebastián · Nuestra boda</title>
+<meta name="description" content="Valentina y Sebastián los invitan a celebrar con ellos este día tan especial.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2C140E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Valentina &amp; Sebastián · Nuestra boda">
+<meta property="og:description" content="Los invitamos a celebrar con nosotros este día tan especial.">
+<!-- TODO: sustituye por la URL absoluta cuando conozcas el dominio, p. ej. https://tudominio.com/img/social.jpg -->
+<meta property="og:image" content="img/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/pinyon-script-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/sobre-cerrado.webp">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<!-- A. Pantalla inicial: sobre lacrado -->
+<div id="splash" class="splash" role="dialog" aria-label="Invitación cerrada">
+  <div class="splash-col">
+    <img class="splash-img" src="img/sobre-cerrado.webp" alt="Sobre vino oscuro con flores en relieve y un sello de cera rosa con el monograma de los novios" width="720" height="1280">
+    <img id="splashOpen" class="splash-img splash-open" src="img/sobre-abierto.webp" alt="" aria-hidden="true" width="720" height="1280">
+    <video id="splashVideo" class="splash-img splash-video" playsinline muted preload="auto" poster="img/sobre-cerrado.webp" aria-hidden="true">
+      <source src="video/sobre.mp4" type="video/mp4">
+      <source src="video/sobre.webm" type="video/webm">
+    </video>
+    <button id="seal" class="seal" type="button" aria-label="Abrir la invitación"><span class="seal-ring"></span></button>
+    <p id="sealHint" class="seal-hint">Toca el sello para abrir</p>
+    <button id="skip" class="skip" type="button">Saltar</button>
+  </div>
+</div>
+
+<main id="page" class="page">
+
+  <!-- B. Portada -->
+  <section class="cover" id="portada" aria-label="Portada">
+    <picture class="cover-art">
+      <img src="img/portada-900.webp" srcset="img/portada-600.webp 600w, img/portada-900.webp 900w" sizes="(max-width: 480px) 100vw, 480px" alt="Arco de piedra cubierto de flores frente a un lago brumoso, con dos cisnes que forman un corazón" width="900" height="1613" fetchpriority="high">
+    </picture>
+    <canvas id="petals" class="petals" aria-hidden="true"></canvas>
+    <div id="draftBadge" class="draft" hidden>Borrador · hay datos de ejemplo</div>
+    <div class="cover-text">
+      <p class="cv-a">Nuestra boda</p>
+      <p class="cv-b" data-bind="fecha-corta"></p>
+      <h1 class="cv-c"><span data-bind="n1"></span> <span class="amp">&amp;</span> <span data-bind="n2"></span></h1>
+    </div>
+    <a class="scroll-cue" href="#invitacion" aria-label="Desliza para ver la invitación">
+      <span>Desliza</span>
+      <svg viewBox="0 0 24 40" width="22" height="36" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v34M4 28l8 8 8-8"/></svg>
+    </a>
+  </section>
+
+  <!-- C. Invitación -->
+  <section class="sec invita" id="invitacion">
+    <img class="flores px" src="img/flores-transicion.webp" alt="" aria-hidden="true" width="1000" height="424">
+    <p class="rv lead" id="invitaTexto"></p>
+  </section>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <!-- E. Cuenta atrás -->
+  <section class="sec cuenta" id="cuenta" aria-labelledby="cuentaT">
+    <h2 id="cuentaT" class="rv">La celebración comienza en</h2>
+    <div class="cd rv" id="cd" role="timer" aria-live="off">
+      <div class="cd-b"><span class="num" data-u="d"><span class="cur">0</span></span><small>Días</small></div>
+      <div class="cd-b"><span class="num" data-u="h"><span class="cur">00</span></span><small>Horas</small></div>
+      <div class="cd-b"><span class="num" data-u="m"><span class="cur">00</span></span><small>Minutos</small></div>
+      <div class="cd-b"><span class="num" data-u="s"><span class="cur">00</span></span><small>Segundos</small></div>
+    </div>
+    <p class="cd-fin" id="cdFin" hidden></p>
+    <p class="sr-only" id="cdSr" aria-live="polite"></p>
+  </section>
+
+  <div class="tear flip" aria-hidden="true"></div>
+
+  <!-- F. Programa -->
+  <section class="sec programa" id="programa" aria-labelledby="progT">
+    <h2 id="progT" class="rv titulo-orn"><span class="orn" aria-hidden="true">❦</span> Programa del día <span class="orn r" aria-hidden="true">❦</span></h2>
+    <div class="tl" id="tl">
+      <div class="tl-line" aria-hidden="true"></div>
+      <ol class="tl-list" id="tlList"></ol>
+      <img id="rose" class="rose" src="img/rosa.webp" alt="" aria-hidden="true" width="320" height="320">
+    </div>
+  </section>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <!-- G. Ubicación -->
+  <section class="sec lugar" id="ubicacion" aria-labelledby="ubiT">
+    <img class="pet pet-l px" src="img/petalos.webp" alt="" aria-hidden="true" width="500" height="500">
+    <img class="pet pet-r px" src="img/petalos.webp" alt="" aria-hidden="true" width="500" height="500">
+    <h2 id="ubiT" class="rv titulo-orn">Ubicación <span class="orn s" aria-hidden="true">✦</span></h2>
+    <p class="rv lugar-n" data-bind="lugar-nombre"></p>
+    <p class="rv lugar-f" data-bind="fecha-larga"></p>
+    <p class="rv lugar-d" data-bind="lugar-dir"></p>
+    <img class="lugar-img" src="img/lugar.webp" alt="Ilustración en sepia de una casa con arcos y jardín donde será la celebración" width="900" height="672" loading="lazy">
+    <a class="btn rv" id="mapBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+  </section>
+
+  <div class="tear flip" aria-hidden="true"></div>
+
+  <!-- Galería -->
+  <section class="sec historia" id="historia" aria-labelledby="hisT">
+    <h2 id="hisT" class="rv titulo-orn">Nuestra historia</h2>
+    <figure class="foto rv">
+      <img src="img/foto-novios-1-600.webp" srcset="img/foto-novios-1-600.webp 600w, img/foto-novios-1-1000.webp 1000w" sizes="(max-width: 480px) 90vw, 430px" alt="Valentina y Sebastián abrazados frente con frente al atardecer en un campo dorado" width="1000" height="1250" loading="lazy">
+    </figure>
+    <figure class="foto rv">
+      <img src="img/foto-novios-2-600.webp" srcset="img/foto-novios-2-600.webp 600w, img/foto-novios-2-1000.webp 1000w" sizes="(max-width: 480px) 90vw, 430px" alt="Valentina y Sebastián riendo, él abrazándola por la espalda, en un campo dorado al atardecer" width="1000" height="664" loading="lazy">
+    </figure>
+  </section>
+
+  <div class="tear" aria-hidden="true"></div>
+
+  <!-- H. Confirmación -->
+  <section class="sec rsvp" id="confirmar" aria-labelledby="rsvpT">
+    <h2 id="rsvpT" class="rv titulo-orn">Confirma tu asistencia</h2>
+    <p class="rv" id="rsvpLimite"></p>
+    <form id="rsvpForm" class="form rv" novalidate>
+      <label for="fNombre">Nombre y apellidos</label>
+      <input id="fNombre" name="nombre" type="text" autocomplete="name" required aria-describedby="eNombre">
+      <p class="err" id="eNombre" role="alert"></p>
+
+      <fieldset>
+        <legend>¿Podrás acompañarnos?</legend>
+        <label class="op"><input type="radio" name="asiste" value="si" checked> <span>Sí, allí estaré</span></label>
+        <label class="op"><input type="radio" name="asiste" value="no"> <span>No podré asistir</span></label>
+      </fieldset>
+
+      <div id="siCampos">
+        <label for="fAcomp">Número de asistentes (contándote a ti)</label>
+        <input id="fAcomp" name="acompanantes" type="number" inputmode="numeric" min="1" max="10" value="1" aria-describedby="eAcomp">
+        <p class="err" id="eAcomp" role="alert"></p>
+        <label for="fAlergias">Alergias o menú especial</label>
+        <input id="fAlergias" name="alergias" type="text">
+      </div>
+
+      <label for="fMensaje">Mensaje para los novios</label>
+      <textarea id="fMensaje" name="mensaje" rows="3"></textarea>
+
+      <button class="btn solid" type="submit" id="fEnviar">Enviar confirmación</button>
+      <p class="estado" id="fEstado" role="status" aria-live="polite"></p>
+    </form>
+    <button class="btn rv" id="icsBtn" type="button">Añadir al calendario</button>
+  </section>
+
+  <!-- Cierre -->
+  <footer class="cierre">
+    <div class="mono" aria-hidden="true" data-bind="monograma"></div>
+    <p class="con-amor">Con amor,</p>
+    <p class="firma"><span data-bind="n1"></span> &amp; <span data-bind="n2"></span></p>
+    <button class="replay" id="replay" type="button">Ver la apertura otra vez</button>
+  </footer>
+</main>
+
+<button id="musicBtn" class="music" type="button" aria-label="Pausar música" aria-pressed="true" hidden>
+  <svg class="i-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+  <svg class="i-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+</button>
+
+<script src="js/config.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
