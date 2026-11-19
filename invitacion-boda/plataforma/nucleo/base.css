@@ -1,0 +1,54 @@
+@font-face { font-family: "Allura"; src: url("../fonts/allura-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Pinyon Script"; src: url("../fonts/pinyon-script-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  --fondo: #F6F3EC; --fondo-pagina: #D9D4C8; --texto: #2A2A2A; --acento: #8A6B3F; --acento-t: #fff; --linea: rgba(0, 0, 0, .2); --campo: rgba(255, 255, 255, .75);
+  --f-titulo: "Cormorant Garamond", Georgia, serif; --f-script: "Allura", cursive; --f-texto: "Cormorant Garamond", Georgia, "Times New Roman", serif; --col: 480px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--fondo-pagina); color: var(--texto); font: 500 1.2rem/1.5 var(--f-texto); overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.page { max-width: var(--col); margin: 0 auto; background: var(--fondo); position: relative; overflow: hidden; box-shadow: 0 0 60px rgba(0, 0, 0, .25); }
+h1, h2, h3 { font-weight: 400; margin: 0; }
+p { margin: 0 0 6px; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+.sec { position: relative; padding: 56px 28px; text-align: center; }
+.draft { position: absolute; top: max(14px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); z-index: 9; background: #FFF4C2; color: #5a3b00; border: 1px solid #c9a227; border-radius: 999px; padding: 6px 14px; font: 600 .85rem/1.2 system-ui, sans-serif; white-space: nowrap; }
+
+/* Cuenta atrás */
+.cd { display: flex; justify-content: center; }
+.cd-b { flex: 1 1 0; max-width: 96px; padding: 4px; text-align: center; }
+.num { position: relative; display: block; height: 1.15em; overflow: hidden; font: 500 2.6rem/1.15 var(--f-titulo); font-variant-numeric: tabular-nums; }
+.num span { display: block; transition: transform .26s ease, opacity .26s ease, filter .26s ease; }
+.num .out { position: absolute; inset: 0; transform: translateY(-100%); opacity: 0; filter: blur(2px); }
+.num .in { transform: translateY(100%); opacity: 0; filter: blur(2px); }
+.cd small { display: block; font-size: .95rem; letter-spacing: .06em; opacity: .9; }
+.cd-fin { font-family: var(--f-script); font-size: 3rem; line-height: 1.1; }
+
+/* Botones y formulario */
+.btn { display: inline-block; padding: 12px 30px; border: 1.5px solid var(--acento); border-radius: 999px; background: transparent; color: var(--acento); font: 600 .95rem var(--f-texto); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .2s, color .2s; }
+.btn.solid, .btn:hover { background: var(--acento); color: var(--acento-t); }
+.btn.solid:hover { filter: brightness(.9); }
+.btn:disabled { opacity: .6; cursor: default; }
+.form { text-align: left; max-width: 400px; margin: 18px auto 26px; display: grid; gap: 6px; }
+.form label, .form legend { font-weight: 600; font-size: 1.1rem; margin-top: 8px; display: block; }
+.form input[type=text], .form input[type=number], .form textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--linea); border-radius: 10px; background: var(--campo); color: #222; font: 500 1.15rem var(--f-texto); }
+.form input[aria-invalid=true] { border-color: #d33a4a; background: #fff0f0; }
+.form fieldset { border: 0; padding: 0; margin: 6px 0 0; display: grid; gap: 8px; }
+.op { display: flex !important; align-items: center; gap: 10px; padding: 11px 14px; border: 1.5px solid var(--linea); border-radius: 10px; background: var(--campo); color: #222; margin: 0 !important; font-weight: 500 !important; cursor: pointer; }
+.op input { width: 20px; height: 20px; accent-color: var(--acento); }
+.err { color: #c0273a; font: 600 .95rem system-ui, sans-serif; margin: 0; }
+.estado { margin: 10px 0 0; min-height: 1.5em; font-weight: 600; text-align: center; }
+.estado.ok { color: #2a8a50; } .estado.mal { color: #d33a4a; } .estado.demo { color: #b8741a; }
+.form .btn.solid { width: 100%; margin-top: 8px; }
+.mini { min-height: 1.4em; font-size: 1rem; margin-top: 10px; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .num span { transition: none; } }

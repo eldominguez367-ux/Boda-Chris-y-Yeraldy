@@ -1,0 +1,64 @@
+{{HEAD}}
+<body>
+<main class="page">
+  <header class="portada">
+    <img class="foto" src="img/portada-900.webp" srcset="img/portada-600.webp 600w, img/portada-900.webp 900w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián caminando de la mano de espaldas por un camino entre trigales, en blanco y negro" width="900" height="1125" fetchpriority="high">
+    <div class="velo"></div>
+    <div class="draft" data-borrador hidden>Borrador · hay datos de ejemplo</div>
+    <p class="mini-t">Nos casamos</p>
+    <h1 class="nombres"><span data-bind="n1-mayus"></span><i>&amp;</i><span data-bind="n2-mayus"></span></h1>
+  </header>
+
+  <section class="fecha" aria-label="Fecha">
+    <p class="rv" data-bind="dia-semana"></p>
+    <div class="f-num rv"><b data-bind="dia"></b><span class="barra"></span><b data-bind="mes"></b><span class="barra"></span><b data-bind="anio"></b></div>
+    <p class="rv"><span data-bind="hora"></span> h</p>
+  </section>
+
+  <section class="sec invita">
+    <p class="rv cita" data-invita></p>
+  </section>
+
+  <section class="sec cuenta" aria-label="Cuenta atrás">
+    {{CUENTA}}
+  </section>
+
+  <section class="sec lugares" aria-label="Lugares">
+    <article class="lugar rv">
+      <h2>Ceremonia</h2>
+      <p class="l-n" data-bind="cer-nombre"></p>
+      <p data-bind="cer-ciudad"></p>
+      <p class="l-h" data-bind="cer-hora"></p>
+      <a class="enlace" data-mapa="cer" href="#">Cómo llegar</a>
+    </article>
+    <article class="lugar rv">
+      <h2>Recepción</h2>
+      <p class="l-n" data-bind="rec-nombre"></p>
+      <p data-bind="rec-ciudad"></p>
+      <p class="l-h" data-bind="rec-hora"></p>
+      <a class="enlace" data-mapa="rec" href="#">Cómo llegar</a>
+    </article>
+  </section>
+
+  <figure class="ancho">
+    <img class="px" src="img/foto-600.webp" srcset="img/foto-600.webp 600w, img/foto-1000.webp 1000w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián abrazados frente con frente en un campo dorado" width="1000" height="1250" loading="lazy">
+  </figure>
+
+  <section class="sec programa" aria-labelledby="progT">
+    <h2 id="progT" class="rv sub">Programa</h2>
+    <ol data-programa class="tabla"></ol>
+  </section>
+
+  <section class="sec rsvp" id="confirmar" aria-labelledby="rsvpT">
+    <h2 id="rsvpT" class="rv sub">Confirmación</h2>
+    <p class="rv" data-limite></p>
+    {{FORM}}
+    <button class="btn rv" data-ics type="button">Añadir al calendario</button>
+  </section>
+
+  <footer class="cierre">
+    <p class="mono" data-bind="monograma"></p>
+    <p class="mini-t" data-bind="fecha-punto"></p>
+  </footer>
+</main>
+{{FOOT}}

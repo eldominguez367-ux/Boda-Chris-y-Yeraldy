@@ -1,0 +1,19 @@
+{
+  "novios": { "n1": "Camila", "n2": "Andrés" },
+  "tratamiento": "ustedes",
+  "fecha": { "iso": "2027-09-18T16:00:00-05:00", "zona": "America/Bogota" },
+  "ceremonia": { "nombre": "Iglesia de la Candelaria", "ciudad": "Cartagena", "direccion": "Plaza de la Aduana", "hora": "16:00", "mapa": "" },
+  "recepcion": { "nombre": "Hacienda Santa Rosa", "ciudad": "Cartagena", "direccion": "Km 4 vía al mar", "hora": "18:30", "mapa": "" },
+  "programa": [
+    { "h": "15:30", "t": "Recepción de invitados", "icono": 0 },
+    { "h": "16:00", "t": "Ceremonia", "icono": 1 },
+    { "h": "17:30", "t": "Cóctel", "icono": 2 },
+    { "h": "19:00", "t": "Cena", "icono": 3 },
+    { "h": "21:30", "t": "Fiesta", "icono": 4 }
+  ],
+  "hashtag": "#CamilaYAndres2027",
+  "playlist": { "enlace": "" },
+  "musica": { "src": "", "volumen": 0.55 },
+  "confirmacion": { "limite": "2027-08-15", "destino": "" },
+  "todos": ["Datos de ejemplo"]
+}

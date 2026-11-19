@@ -1,0 +1,70 @@
+{{HEAD}}
+<body>
+<main class="page">
+  <header class="hero">
+    <img class="foto" src="img/portada-900.webp" srcset="img/portada-600.webp 600w, img/portada-900.webp 900w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián abrazados descalzos en la playa al atardecer" width="900" height="1125" fetchpriority="high">
+    <div class="velo"></div>
+    <img class="hoja izq" src="img/hojas.webp" alt="" aria-hidden="true" width="520" height="520">
+    <img class="hoja der" src="img/hojas.webp" alt="" aria-hidden="true" width="520" height="520">
+    <div class="draft" data-borrador hidden>Borrador · hay datos de ejemplo</div>
+    <div class="hero-t">
+      <p class="a">Nos casamos</p>
+      <h1><span data-bind="n1"></span> <span class="amp">&amp;</span> <span data-bind="n2"></span></h1>
+      <p class="b" data-bind="fecha-punto"></p>
+    </div>
+    <img class="olas" src="img/olas.webp" alt="" aria-hidden="true" width="1000" height="424">
+  </header>
+
+  <section class="sec invita">
+    <p class="rv cita" data-invita></p>
+  </section>
+
+  <section class="sec cuenta" aria-label="Cuenta atrás">
+    {{CUENTA}}
+  </section>
+
+  <section class="sec evento">
+    <h2 class="rv">Ceremonia</h2>
+    <p class="rv h" data-bind="cer-hora"></p>
+    <p class="rv l" data-bind="cer-nombre"></p>
+    <p class="rv" data-bind="cer-ciudad"></p>
+    <a class="btn rv" data-mapa="cer" href="#">Cómo llegar</a>
+  </section>
+  <img class="olas fin" src="img/olas.webp" alt="" aria-hidden="true" width="1000" height="424" loading="lazy">
+  <section class="sec evento">
+    <h2 class="rv">Recepción</h2>
+    <p class="rv h" data-bind="rec-hora"></p>
+    <p class="rv l" data-bind="rec-nombre"></p>
+    <p class="rv" data-bind="rec-ciudad"></p>
+    <a class="btn rv" data-mapa="rec" href="#">Cómo llegar</a>
+  </section>
+
+  <figure class="ancho">
+    <img class="px" src="img/foto-600.webp" srcset="img/foto-600.webp 600w, img/foto-1000.webp 1000w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián riendo, él abrazándola por la espalda, en un campo dorado" width="1000" height="664" loading="lazy">
+  </figure>
+
+  <section class="sec programa" aria-labelledby="progT">
+    <h2 id="progT" class="rv">Plan del día</h2>
+    <ol data-programa class="tabla"></ol>
+  </section>
+
+  <section class="sec hash">
+    <h2 class="rv">Comparte el amor</h2>
+    <p class="rv">Etiqueta tus fotos de la fiesta con nuestro hashtag.</p>
+    <button class="btn solid rv" data-hashtag-btn type="button"></button>
+    <p class="mini" data-hashtag-estado role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="sec rsvp" id="confirmar" aria-labelledby="rsvpT">
+    <h2 id="rsvpT" class="rv">Confirma tu asistencia</h2>
+    <p class="rv" data-limite></p>
+    {{FORM}}
+    <button class="btn rv" data-ics type="button">Añadir al calendario</button>
+  </section>
+
+  <footer class="cierre">
+    <p class="firma"><span data-bind="n1"></span> &amp; <span data-bind="n2"></span></p>
+    <img class="olas fin2" src="img/olas.webp" alt="" aria-hidden="true" width="1000" height="424" loading="lazy">
+  </footer>
+</main>
+{{FOOT}}

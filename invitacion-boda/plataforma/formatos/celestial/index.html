@@ -1,0 +1,62 @@
+{{HEAD}}
+<body>
+<main class="page">
+  <header class="hero">
+    <img class="cielo" src="img/cielo-900.webp" srcset="img/cielo-600.webp 600w, img/cielo-900.webp 900w" sizes="(max-width: 480px) 100vw, 480px" alt="Cielo nocturno azul con una luna creciente dorada y constelaciones" width="900" height="1613" fetchpriority="high">
+    <canvas id="estrellas" class="estrellas" aria-hidden="true"></canvas>
+    <div class="draft" data-borrador hidden>Borrador · hay datos de ejemplo</div>
+    <div class="hero-t">
+      <p class="a">Nos casamos</p>
+      <h1><span data-bind="n1"></span><span class="amp">&amp;</span><span data-bind="n2"></span></h1>
+      <p class="b" data-bind="fecha-punto"></p>
+    </div>
+  </header>
+
+  <section class="sec invita">
+    <img class="luna rv" src="img/luna.webp" alt="" aria-hidden="true" width="260" height="260">
+    <p class="rv cita" data-invita></p>
+  </section>
+
+  <section class="sec cuenta" aria-label="Cuenta atrás">
+    {{CUENTA}}
+  </section>
+
+  <section class="sec evento">
+    <h2 class="rv">Ceremonia</h2>
+    <p class="rv h" data-bind="cer-hora"></p>
+    <p class="rv l" data-bind="cer-nombre"></p>
+    <p class="rv" data-bind="cer-ciudad"></p>
+    <a class="btn rv" data-mapa="cer" href="#">Ver detalles</a>
+  </section>
+  <p class="estrellita" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</p>
+  <section class="sec evento">
+    <h2 class="rv">Recepción</h2>
+    <p class="rv h" data-bind="rec-hora"></p>
+    <p class="rv l" data-bind="rec-nombre"></p>
+    <p class="rv" data-bind="rec-ciudad"></p>
+    <a class="btn rv" data-mapa="rec" href="#">Ver detalles</a>
+  </section>
+
+  <figure class="arco rv">
+    <img src="img/foto-600.webp" srcset="img/foto-600.webp 600w, img/foto-1000.webp 1000w" sizes="(max-width: 480px) 80vw, 380px" alt="Valentina y Sebastián abrazados al anochecer bajo las primeras estrellas" width="1000" height="1250" loading="lazy">
+  </figure>
+
+  <section class="sec programa" aria-labelledby="progT">
+    <h2 id="progT" class="rv">Programa de la noche</h2>
+    <ol data-programa class="linea"></ol>
+  </section>
+
+  <section class="sec rsvp" id="confirmar" aria-labelledby="rsvpT">
+    <h2 id="rsvpT" class="rv">Confirma tu asistencia</h2>
+    <p class="rv" data-limite></p>
+    {{FORM}}
+    <button class="btn rv" data-ics type="button">Añadir al calendario</button>
+  </section>
+
+  <footer class="cierre">
+    <img class="luna peq" src="img/luna.webp" alt="" aria-hidden="true" width="160" height="160" loading="lazy">
+    <p class="firma"><span data-bind="n1"></span> &amp; <span data-bind="n2"></span></p>
+    <p class="mini-t" data-bind="hashtag"></p>
+  </footer>
+</main>
+{{FOOT}}

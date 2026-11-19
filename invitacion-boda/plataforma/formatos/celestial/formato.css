@@ -1,0 +1,38 @@
+:root { --fondo: #0C1730; --texto: #EFE6D2; --acento: #D8B56A; --acento-t: #0C1730; --linea: rgba(216, 181, 106, .45); --campo: rgba(255, 255, 255, .08); --fondo-pagina: #060C1A; --f-script: "Pinyon Script", cursive; }
+.page { background: linear-gradient(#0C1730, #101F3F 40%, #0C1730); }
+.form input[type=text], .form input[type=number], .form textarea { color: #F4EBD8; border-color: var(--linea); }
+.op { color: var(--texto); }
+.estado.demo { color: #F0C070; } .estado.ok { color: #8FD6A8; } .estado.mal, .err { color: #FF8C98; }
+h2 { font: 400 2.5rem/1.15 var(--f-script); color: var(--acento); margin-bottom: 8px; }
+.hero { position: relative; min-height: min(100svh, 860px); display: flex; align-items: flex-end; overflow: hidden; }
+.cielo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.estrellas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 23, 48, 0) 40%, rgba(12, 23, 48, .75) 80%, #0C1730 100%); }
+.hero-t { position: relative; z-index: 2; width: 100%; text-align: center; padding: 0 20px 46px; }
+.hero-t .a { font-size: 1rem; letter-spacing: .4em; text-transform: uppercase; color: var(--acento); font-weight: 600; }
+.hero-t h1 { font: 400 clamp(3.2rem, 16vw, 5rem)/1.02 var(--f-script); color: #FBF3DF; text-shadow: 0 2px 18px rgba(0, 0, 0, .6); }
+.hero-t h1 span { display: block; } .hero-t .amp { font-size: .55em; line-height: .8; color: var(--acento); }
+.hero-t .b { font-size: 1.4rem; letter-spacing: .24em; font-weight: 600; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.luna { display: block; width: 130px; height: auto; margin: 0 auto 8px; }
+.luna.peq { width: 80px; }
+.cita { font: italic 400 1.55rem/1.45 var(--f-titulo); max-width: 22ch; margin: 0 auto; }
+.invita { padding-top: 10px; padding-bottom: 20px; }
+.cuenta { padding-top: 4px; padding-bottom: 34px; }
+.cd { gap: 10px; } .cd-b { border: 1px solid var(--linea); border-radius: 50%; aspect-ratio: 1; max-width: 80px; padding-top: 10px; background: rgba(216, 181, 106, .07); }
+.num { color: var(--acento); font-size: 1.8rem; } .cd small { font-size: .7rem; letter-spacing: .02em; }
+.evento { padding-top: 26px; padding-bottom: 30px; }
+.evento .h { font: 600 1.6rem var(--f-titulo); letter-spacing: .1em; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+.evento .l { font-size: 1.15rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+.evento .btn { margin-top: 16px; }
+.estrellita { text-align: center; color: var(--acento); letter-spacing: .3em; margin: 0; }
+.arco { margin: 10px auto 24px; width: min(80%, 380px); border-radius: 999px 999px 16px 16px; overflow: hidden; border: 2px solid var(--acento); padding: 6px; background: rgba(216, 181, 106, .08); }
+.arco img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 10px 10px; }
+.linea { max-width: 330px; margin: 16px auto 0; position: relative; text-align: left; }
+.linea::before { content: ""; position: absolute; left: 6px; top: 20px; bottom: 20px; width: 1px; background: var(--acento); opacity: .7; }
+.linea li { position: relative; padding: 12px 0 12px 36px; }
+.linea .dot { position: absolute; left: 0; top: 50%; width: 13px; height: 13px; background: var(--acento); transform: translateY(-50%) rotate(45deg); box-shadow: 0 0 0 4px var(--fondo); }
+.linea .p-txt { display: flex; gap: 16px; align-items: baseline; }
+.linea .p-h { font: 600 1.25rem var(--f-titulo); min-width: 58px; color: var(--acento); font-variant-numeric: tabular-nums; }
+.cierre { text-align: center; padding: 24px 20px 60px; }
+.firma { font: 400 3rem/1.1 var(--f-script); color: var(--acento); }
+.mini-t { letter-spacing: .2em; opacity: .8; }

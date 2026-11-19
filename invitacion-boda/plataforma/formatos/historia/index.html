@@ -1,0 +1,84 @@
+{{HEAD}}
+<body class="historia">
+<main class="story" id="story" aria-label="Invitación en formato historia">
+  <div class="barras" id="barras" aria-hidden="true"></div>
+  <div class="draft" data-borrador hidden>Borrador · hay datos de ejemplo</div>
+
+  <section class="slide on" data-dur="6500" aria-label="Portada">
+    <img class="fondo" src="img/s1-900.webp" srcset="img/s1-600.webp 600w, img/s1-900.webp 900w" sizes="480px" alt="Valentina y Sebastián abrazados frente con frente al atardecer" width="900" height="1600" fetchpriority="high">
+    <div class="vel"></div>
+    <div class="cont fin">
+      <p class="a">Nos casamos</p>
+      <h1><span data-bind="n1"></span><span class="amp">&amp;</span><span data-bind="n2"></span></h1>
+      <p class="b" data-bind="fecha-punto"></p>
+      <p class="toca">Toca para avanzar</p>
+    </div>
+  </section>
+
+  <section class="slide" data-dur="7500" aria-label="Invitación y cuenta atrás">
+    <img class="fondo" src="img/s2-600.webp" srcset="img/s2-600.webp 600w, img/s2-1000.webp 1000w" sizes="480px" alt="Valentina y Sebastián abrazados con los ojos cerrados en un campo dorado" width="1000" height="1250" loading="lazy">
+    <div class="vel osc"></div>
+    <div class="cont centro">
+      <p class="cita" data-invita></p>
+      {{CUENTA}}
+    </div>
+  </section>
+
+  <section class="slide" data-dur="6500" aria-label="Ceremonia">
+    <img class="fondo" src="img/s3-600.webp" srcset="img/s3-600.webp 600w, img/s3-1000.webp 1000w" sizes="480px" alt="Valentina y Sebastián abrazados descalzos en la playa al atardecer" width="1000" height="1250" loading="lazy">
+    <div class="vel osc"></div>
+    <div class="cont fin">
+      <p class="a">Ceremonia</p>
+      <p class="hora" data-bind="cer-hora"></p>
+      <p class="lugar" data-bind="cer-nombre"></p>
+      <p data-bind="cer-ciudad"></p>
+      <a class="btn" data-mapa="cer" href="#">Cómo llegar</a>
+    </div>
+  </section>
+
+  <section class="slide" data-dur="6500" aria-label="Recepción">
+    <img class="fondo" src="img/s4-600.webp" srcset="img/s4-600.webp 600w, img/s4-1000.webp 1000w" sizes="480px" alt="Valentina y Sebastián abrazados al anochecer bajo las primeras estrellas" width="1000" height="1250" loading="lazy">
+    <div class="vel osc"></div>
+    <div class="cont fin">
+      <p class="a">Recepción</p>
+      <p class="hora" data-bind="rec-hora"></p>
+      <p class="lugar" data-bind="rec-nombre"></p>
+      <p data-bind="rec-ciudad"></p>
+      <a class="btn" data-mapa="rec" href="#">Cómo llegar</a>
+    </div>
+  </section>
+
+  <section class="slide" data-dur="8000" aria-label="Programa">
+    <img class="fondo" src="img/s5-600.webp" srcset="img/s5-600.webp 600w, img/s5-1000.webp 1000w" sizes="480px" alt="Valentina y Sebastián caminando de la mano de espaldas, en blanco y negro" width="1000" height="1250" loading="lazy">
+    <div class="vel osc2"></div>
+    <div class="cont centro">
+      <p class="a">El día de la boda</p>
+      <ol data-programa class="prog"></ol>
+    </div>
+  </section>
+
+  <section class="slide" data-dur="0" aria-label="Confirmación">
+    <img class="fondo" src="img/s6-600.webp" srcset="img/s6-600.webp 600w, img/s6-1000.webp 1000w" sizes="480px" alt="Valentina y Sebastián riendo en un campo dorado" width="1000" height="664" loading="lazy">
+    <div class="vel osc"></div>
+    <div class="cont fin">
+      <p class="a">¿Nos acompañas?</p>
+      <p class="cita" data-limite></p>
+      <button class="btn solid" id="abrirForm" type="button">Confirmar asistencia</button>
+      <button class="btn" data-ics type="button">Añadir al calendario</button>
+      <button class="btn" data-hashtag-btn type="button"></button>
+      <p class="mini" data-hashtag-estado role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <button class="nav ant" id="ant" type="button" aria-label="Anterior"></button>
+  <button class="nav sig" id="sig" type="button" aria-label="Siguiente"></button>
+
+  <div class="hoja" id="hoja" role="dialog" aria-modal="true" aria-labelledby="rsvpT" hidden>
+    <div class="hoja-in">
+      <button class="cerrar" id="cerrarForm" type="button" aria-label="Cerrar">×</button>
+      <h2 id="rsvpT">Confirma tu asistencia</h2>
+      {{FORM}}
+    </div>
+  </div>
+</main>
+{{FOOT}}

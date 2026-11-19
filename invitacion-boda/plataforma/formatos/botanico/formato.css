@@ -1,0 +1,34 @@
+:root { --fondo: #FBFAF4; --texto: #46563F; --acento: #5F7B58; --linea: rgba(95, 123, 88, .4); --fondo-pagina: #DCE0D2; --f-script: "Allura", cursive; }
+h2 { font: italic 400 2.3rem/1.15 var(--f-titulo); color: var(--acento); margin-bottom: 8px; }
+.hero { position: relative; padding: 0 0 20px; text-align: center; }
+.rama { display: block; width: 112%; max-width: none; margin: 0 -6%; }
+.rama.inv { transform: scaleY(-1); width: 100%; margin: 0; }
+.marco { position: relative; width: min(94%, 430px); margin: -20px auto 0; }
+.marco > img { display: block; width: 100%; height: auto; }
+.marco-t { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30% 21%; }
+.marco-t .a { font-size: .8rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 600; }
+.marco-t h1 { font: 400 clamp(2.2rem, 10.5vw, 3.3rem)/1 var(--f-script); color: var(--acento); }
+.marco-t h1 span { display: block; }
+.marco-t .amp { font-size: .6em; line-height: .8; color: #8aa07f; }
+.marco-t .b { font-size: 1.05rem; letter-spacing: .16em; font-weight: 600; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.cita { font: italic 400 1.55rem/1.4 var(--f-titulo); max-width: 22ch; margin: 0 auto; }
+.invita { padding-top: 14px; padding-bottom: 20px; }
+.cuenta { padding-top: 10px; padding-bottom: 36px; }
+.cd { gap: 8px; } .cd-b { border: 1.5px solid var(--linea); border-radius: 18px; padding: 10px 2px 6px; background: rgba(255, 255, 255, .55); }
+.num { color: var(--acento); font-size: 2.2rem; }
+.evento { padding-top: 30px; padding-bottom: 34px; }
+.evento .h { font: 600 1.6rem var(--f-titulo); letter-spacing: .1em; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+.evento .l { font-size: 1.15rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 0; }
+.evento .btn { margin-top: 18px; }
+.div { display: block; width: 90%; margin: 0 auto; transform: scaleY(-1); opacity: .9; }
+.arco { margin: 6px auto 20px; width: min(80%, 380px); border-radius: 999px 999px 18px 18px; overflow: hidden; border: 3px solid #fff; box-shadow: 0 14px 34px -14px rgba(60, 80, 55, .5); }
+.arco img { display: block; width: 100%; height: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.linea { max-width: 330px; margin: 16px auto 0; position: relative; text-align: left; }
+.linea::before { content: ""; position: absolute; left: 6px; top: 20px; bottom: 20px; width: 2px; background: var(--linea); }
+.linea li { position: relative; padding: 12px 0 12px 36px; }
+.linea .dot { position: absolute; left: 0; top: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--acento); transform: translateY(-50%); box-shadow: 0 0 0 4px var(--fondo); }
+.linea .p-txt { display: flex; gap: 16px; align-items: baseline; }
+.linea .p-h { font: 600 1.25rem var(--f-titulo); min-width: 58px; font-variant-numeric: tabular-nums; }
+.hash { background: linear-gradient(#EDF1E6, #E6ECDD); }
+.cierre { text-align: center; padding: 20px 20px 50px; }
+.firma { font: 400 3rem/1.1 var(--f-script); color: var(--acento); }

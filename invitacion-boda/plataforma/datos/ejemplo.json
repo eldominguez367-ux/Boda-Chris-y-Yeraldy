@@ -1,0 +1,19 @@
+{
+  "novios": { "n1": "Valentina", "n2": "Sebastián" },
+  "tratamiento": "ustedes",
+  "fecha": { "iso": "2027-05-22T17:00:00-04:00", "zona": "America/Santo_Domingo" },
+  "ceremonia": { "nombre": "Capilla San Rafael", "ciudad": "Santo Domingo", "direccion": "Av. Principal 123", "hora": "17:00", "mapa": "" },
+  "recepcion": { "nombre": "Jardín Casa Hermosa", "ciudad": "Santo Domingo", "direccion": "Calle Las Palmas 12", "hora": "19:00", "mapa": "" },
+  "programa": [
+    { "h": "16:30", "t": "Llegada de invitados", "icono": 0 },
+    { "h": "17:00", "t": "Ceremonia", "icono": 1 },
+    { "h": "18:00", "t": "Brindis", "icono": 2 },
+    { "h": "19:00", "t": "Cena", "icono": 3 },
+    { "h": "21:00", "t": "Baile", "icono": 4 }
+  ],
+  "hashtag": "#ValentinaySebastian",
+  "playlist": { "enlace": "" },
+  "musica": { "src": "", "volumen": 0.55 },
+  "confirmacion": { "limite": "2027-04-22", "destino": "" },
+  "todos": ["Datos de ejemplo: sustituir por los del cliente"]
+}
