@@ -25,3 +25,10 @@ Cambia los PNG de `assets/<version>/` (mismos nombres) y vuelve a ejecutar `buil
 ## Publicar
 Sube el contenido de la carpeta `boda/` del zip (Netlify Drop, GitHub Pages, cualquier hosting estático).
 Antes: pon la URL absoluta en `og:image` de `index.html` (hay un comentario TODO).
+
+## Diseño 2 (fotográfico, estilo oliva y papel rasgado)
+Carpeta `diseno2/`. Arte generado con Higgsfield (portada y fotos de la pareja, iconos de línea, tiras de papel rasgado, ramitas).
+```
+cd diseno2 && python3 build.py   # -> diseno2/dist/boda/ y diseno2/dist/boda-para-subir-diseno2.zip
+```
+Los datos se editan en `diseno2/src/js/config.js` (ceremonia y recepción por separado, programa con iconos, hashtag y enlace de la playlist).

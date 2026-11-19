@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valentina &amp; Sebastián · Nos casamos</title>
+<meta name="description" content="Valentina y Sebastián los invitan a celebrar con ellos este día tan especial.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#7C8261">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Valentina &amp; Sebastián · Nos casamos">
+<meta property="og:description" content="Los invitamos a celebrar con nosotros este día tan especial.">
+<!-- TODO: URL absoluta cuando conozcas el dominio, p. ej. https://tudominio.com/img/social.jpg -->
+<meta property="og:image" content="img/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/allura-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-900.webp">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<main id="page" class="page">
+
+  <!-- Portada -->
+  <header class="hero" id="portada">
+    <img class="hero-img" src="img/hero-900.webp" srcset="img/hero-600.webp 600w, img/hero-900.webp 900w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián abrazados frente con frente al atardecer" width="900" height="1600" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div id="draftBadge" class="draft" hidden>Borrador · hay datos de ejemplo</div>
+    <div class="hero-text">
+      <p class="h-a">Nos casamos</p>
+      <h1 class="h-b"><span data-bind="n1"></span> <span class="amp">&amp;</span> <span data-bind="n2"></span></h1>
+      <p class="h-c" data-bind="fecha-punto"></p>
+    </div>
+    <i class="edge bottom" aria-hidden="true"></i>
+  </header>
+
+  <!-- Cuenta atrás -->
+  <section class="sec cuenta" aria-label="Cuenta atrás">
+    <div class="cd rv" id="cd" role="timer" aria-live="off">
+      <div class="cd-b"><span class="num" data-u="d"><span class="cur">0</span></span><small>Días</small></div>
+      <div class="cd-b"><span class="num" data-u="h"><span class="cur">00</span></span><small>Horas</small></div>
+      <div class="cd-b"><span class="num" data-u="m"><span class="cur">00</span></span><small>Minutos</small></div>
+      <div class="cd-b"><span class="num" data-u="s"><span class="cur">00</span></span><small>Segundos</small></div>
+    </div>
+    <p class="cd-fin" id="cdFin" hidden></p>
+    <p class="sr-only" id="cdSr" aria-live="polite"></p>
+    <img class="ramas rv" src="img/ramitas.webp" alt="" aria-hidden="true" width="500" height="90">
+  </section>
+
+  <!-- Ceremonia y recepción -->
+  <section class="sec evento" aria-labelledby="cerT">
+    <img class="ico rv" src="img/icono-1.webp" alt="" aria-hidden="true" width="120" height="120">
+    <h2 id="cerT" class="rv">Ceremonia</h2>
+    <p class="hora rv"><span data-bind="cer-hora"></span></p>
+    <p class="lugar rv" data-bind="cer-nombre"></p>
+    <p class="ciudad rv" data-bind="cer-ciudad"></p>
+    <a class="btn rv" id="cerMapa" href="#" target="_blank" rel="noopener">Ver detalles</a>
+  </section>
+
+  <div class="sep" aria-hidden="true"><img src="img/ramitas.webp" alt="" width="500" height="90" loading="lazy"></div>
+
+  <section class="sec evento" aria-labelledby="recT">
+    <img class="ico rv" src="img/icono-2.webp" alt="" aria-hidden="true" width="120" height="120" loading="lazy">
+    <h2 id="recT" class="rv">Recepción</h2>
+    <p class="hora rv"><span data-bind="rec-hora"></span></p>
+    <p class="lugar rv" data-bind="rec-nombre"></p>
+    <p class="ciudad rv" data-bind="rec-ciudad"></p>
+    <a class="btn rv" id="recMapa" href="#" target="_blank" rel="noopener">Ver detalles</a>
+  </section>
+
+  <!-- Foto 1 -->
+  <figure class="foto-full">
+    <i class="edge top" aria-hidden="true"></i>
+    <img class="px" src="img/foto-1-600.webp" srcset="img/foto-1-600.webp 600w, img/foto-1-1000.webp 1000w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián abrazados con los ojos cerrados en un campo dorado" width="1000" height="1250" loading="lazy">
+    <i class="edge bottom" aria-hidden="true"></i>
+  </figure>
+
+  <!-- Programa -->
+  <section class="sec programa" aria-labelledby="progT">
+    <h2 id="progT" class="rv titulo">El día de la boda</h2>
+    <img class="ramas rv" src="img/ramitas.webp" alt="" aria-hidden="true" width="500" height="90" loading="lazy">
+    <div class="tl" id="tl">
+      <div class="tl-line" aria-hidden="true"></div>
+      <ol class="tl-list" id="tlList"></ol>
+    </div>
+  </section>
+
+  <!-- Foto 2 -->
+  <figure class="foto-full">
+    <i class="edge top" aria-hidden="true"></i>
+    <img class="px" src="img/foto-2-600.webp" srcset="img/foto-2-600.webp 600w, img/foto-2-1000.webp 1000w" sizes="(max-width: 480px) 100vw, 480px" alt="Valentina y Sebastián riendo, él abrazándola por la espalda" width="1000" height="664" loading="lazy">
+    <i class="edge bottom" aria-hidden="true"></i>
+  </figure>
+
+  <!-- Comparte el amor -->
+  <section class="sec azul" aria-labelledby="comT">
+    <i class="edge top" aria-hidden="true"></i>
+    <svg class="i-insta rv" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg>
+    <h2 id="comT" class="rv sub">Comparte el amor</h2>
+    <p class="rv">Ayúdennos a guardar este día tan especial compartiendo sus fotos y sus historias.</p>
+    <button class="btn solid rv" id="hashBtn" type="button"></button>
+    <p class="mini" id="hashEstado" role="status" aria-live="polite"></p>
+    <i class="edge bottom" aria-hidden="true"></i>
+  </section>
+
+  <!-- Playlist -->
+  <section class="sec playlist" aria-labelledby="plT">
+    <svg class="i-nota rv" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+    <h2 id="plT" class="rv sub">Nuestra playlist</h2>
+    <p class="rv">Añade una canción para que bailemos toda la noche.</p>
+    <a class="btn solid rv" id="plBtn" href="#" target="_blank" rel="noopener">Añadir canción</a>
+    <p class="mini" id="plEstado" role="status" aria-live="polite"></p>
+  </section>
+
+  <!-- Confirmación -->
+  <section class="sec rsvp" id="confirmar" aria-labelledby="rsvpT">
+    <h2 id="rsvpT" class="rv titulo">Confirma tu asistencia</h2>
+    <p class="rv" id="rsvpLimite"></p>
+    <form id="rsvpForm" class="form rv" novalidate>
+      <label for="fNombre">Nombre y apellidos</label>
+      <input id="fNombre" name="nombre" type="text" autocomplete="name" required aria-describedby="eNombre">
+      <p class="err" id="eNombre" role="alert"></p>
+      <fieldset>
+        <legend>¿Podrás acompañarnos?</legend>
+        <label class="op"><input type="radio" name="asiste" value="si" checked> <span>Sí, allí estaré</span></label>
+        <label class="op"><input type="radio" name="asiste" value="no"> <span>No podré asistir</span></label>
+      </fieldset>
+      <div id="siCampos">
+        <label for="fAcomp">Número de asistentes (contándote a ti)</label>
+        <input id="fAcomp" name="acompanantes" type="number" inputmode="numeric" min="1" max="10" value="1" aria-describedby="eAcomp">
+        <p class="err" id="eAcomp" role="alert"></p>
+        <label for="fAlergias">Alergias o menú especial</label>
+        <input id="fAlergias" name="alergias" type="text">
+      </div>
+      <label for="fMensaje">Mensaje para los novios</label>
+      <textarea id="fMensaje" name="mensaje" rows="3"></textarea>
+      <button class="btn solid" type="submit" id="fEnviar">Enviar confirmación</button>
+      <p class="estado" id="fEstado" role="status" aria-live="polite"></p>
+    </form>
+    <button class="btn rv" id="icsBtn" type="button">Añadir al calendario</button>
+  </section>
+
+  <footer class="cierre">
+    <p class="firma"><span data-bind="n1"></span> <span class="amp2">&amp;</span> <span data-bind="n2"></span></p>
+    <img class="ramas" src="img/ramitas.webp" alt="" aria-hidden="true" width="500" height="90" loading="lazy">
+  </footer>
+</main>
+<script src="js/config.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
