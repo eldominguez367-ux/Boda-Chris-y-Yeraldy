@@ -173,6 +173,10 @@ def postprocesar(fmt, dest):
     """Música en todos los formatos; apertura tipo carta en todos menos 'sobre' (que ya tiene la suya)."""
     os.makedirs(f"{dest}/audio", exist_ok=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{A}/audio/{MUSICA[fmt]}.mp3", "-b:a", "96k", "-ac", "2", f"{dest}/audio/musica.mp3"], check=True)
+    # enlaces personalizados (?g=Nombre&n=3) en todos los formatos
+    os.makedirs(f"{dest}/js", exist_ok=True); shutil.copy(f"{R}/nucleo/invitado.js", f"{dest}/js/invitado.js")
+    ph = f"{dest}/index.html"; hh = open(ph, encoding="utf-8").read()
+    hh = hh.replace("</body>", '<script src="js/invitado.js"></script>\n</body>', 1); open(ph, "w", encoding="utf-8").write(hh)
     if fmt not in ESTILO_CARTA: return
     e = ESTILO_CARTA[fmt]; os.makedirs(f"{dest}/carta", exist_ok=True)
     for k, n in (("c", "sobre-cerrado"), ("a", "sobre-abierto")):
@@ -235,11 +239,13 @@ if __name__ == "__main__":
         rgba = rgba.resize((560, round(rgba.height * 560 / rgba.width)), Image.LANCZOS)
         rgba.save(f"{DIST}/img/personaje-{nombre}.webp", "WEBP", quality=88, method=6)
     shutil.rmtree(f"{DIST}/fonts", ignore_errors=True); shutil.copytree(f"{R}/catalogo/fonts", f"{DIST}/fonts")
+    shutil.rmtree(f"{DIST}/pedidos", ignore_errors=True)
+    if os.path.isdir(f"{R}/catalogo/pedidos"): shutil.copytree(f"{R}/catalogo/pedidos", f"{DIST}/pedidos")
     shutil.rmtree(f"{DIST}/miniaturas", ignore_errors=True)
     if os.path.isdir(f"{R}/catalogo/miniaturas"): shutil.copytree(f"{R}/catalogo/miniaturas", f"{DIST}/miniaturas")
     # página madre
     cat = f"{R}/catalogo"
-    for f in ("index.html", "diseno.html", "catalogo.css", "catalogo.js", "config.js"): shutil.copy(f"{cat}/{f}", f"{DIST}/{f}")
+    for f in ("index.html", "diseno.html", "pedido.html", "pedido.js", "seguimiento.html", "seguimiento.js", "planificador.html", "planificador.css", "planificador.js", "catalogo.css", "catalogo.js", "config.js"): shutil.copy(f"{cat}/{f}", f"{DIST}/{f}")
     mp = f"{R}/catalogo/miniaturas/miniaturas.json"
     minis = json.load(open(mp)) if os.path.exists(mp) else {}
     for f in FORMATOS:

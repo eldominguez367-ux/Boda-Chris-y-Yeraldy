@@ -70,3 +70,13 @@ Cada formato usa un estilo de sobre (`ESTILO_CARTA` en `herramientas/construir.p
 
 **Arte original.** Las imágenes originales (PNG) de los sobres, objetos y personajes no están en el repositorio por su peso: están en tu galería de Higgsfield. Los videos fuente están comprimidos en `assets/sobres/*.mp4`.
 **Miniaturas.** `herramientas/miniaturas.js` genera las capturas del catálogo (sirve `dist/` en el puerto 8770 y ejecútalo).
+
+## Funciones añadidas (sin créditos de IA)
+
+- **Región y moneda**: selector en la cabecera (LATAM/España; USD, EUR, MXN, DOP, COP). Precios base en US$; tasas y redondeo en `catalogo/config.js` (`monedas`, `regiones`).
+- **Pedido en 3 pasos** (`pedido.html`): diseño y plan → resumen, contacto y código de descuento (`codigos` en config.js) → briefing de la boda. Envía por WhatsApp (o correo) un mensaje con el JSON listo para `herramientas/generar_cliente.py`. Antes de vender, pon tu número real en `config.js` (`whatsapp`, `email`).
+- **Seguimiento** (`seguimiento.html?c=CODIGO`): línea de tiempo de 6 etapas leída de `catalogo/pedidos/CODIGO.json`. Se crea/actualiza con `python3 herramientas/nuevo_pedido.py CODIGO "Novios" "Formato" "Plan" [estado 0-5] ["mensaje"] ["enlace borrador"]` y se reconstruye con `construir.py`.
+- **Planificador** (`planificador.html`): invitados, presupuesto, tareas y ajustes; datos en el navegador (localStorage), exportación JSON/CSV. `?demo=1` carga un ejemplo.
+- **Enlaces por invitado**: `…/index.html?g=Familia%20Pérez&n=4` muestra "Para Familia Pérez · 4 lugares reservados" y rellena el formulario de confirmación (`nucleo/invitado.js`, inyectado en todos los formatos).
+- **Extras del catálogo**: favoritos, "continúa donde lo dejaste", aviso promocional, boletín (modo demo hasta definir `boletin` en config.js). La sección de opiniones solo aparece si añades reseñas reales en `opiniones`.
+- Pendiente de negocio: pasarela de pago, número de WhatsApp real, revisar licencia comercial de la música generada.

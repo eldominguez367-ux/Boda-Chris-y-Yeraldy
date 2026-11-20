@@ -16,7 +16,7 @@
 <header class="cab" id="cab">
   <div class="caja cab-in">
     <a href="index.html" class="logo" data-marca>Eterna</a>
-    <nav aria-label="Principal"><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="#como">Cómo funciona</a><a href="#faq">Preguntas</a></nav>
+    <nav aria-label="Principal"><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="#planificador">Planificador</a><a href="#como">Cómo funciona</a><a href="#faq">Preguntas</a></nav>
     <div class="cab-der"><a class="link" id="cabWa" href="#" target="_blank" rel="noopener">Escríbenos</a><button class="btn solid" type="button" data-pedido>Empezar</button><button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false"><i></i><i></i></button></div>
   </div>
 </header>
@@ -92,6 +92,31 @@
     </div>
   </section>
 
+  <section class="sec" id="planificador">
+    <div class="caja invitados">
+      <div>
+        <p class="eyebrow">Incluido con tu invitación</p>
+        <h2>Tu boda, bien organizada desde el móvil.</h2>
+        <p style="color:var(--suave)">Un planificador sencillo para llevar a tus invitados, tu presupuesto y tus tareas en un solo sitio, sin instalar nada y sin crear cuenta.</p>
+        <ul class="lista-sec">
+          <li><b>01</b><span><strong>Invitados y confirmaciones</strong>Quién viene, con cuántos acompañantes y con qué menú.</span></li>
+          <li><b>02</b><span><strong>Enlaces con el nombre de cada invitado</strong>Un enlace por invitado, listo para enviar por WhatsApp.</span></li>
+          <li><b>03</b><span><strong>Presupuesto</strong>Lo estimado, lo real y lo ya pagado, por categorías.</span></li>
+          <li><b>04</b><span><strong>Tareas con fechas</strong>Una lista de lo que toca hacer y cuándo, según el día de tu boda.</span></li>
+        </ul>
+        <div class="acciones"><a class="btn solid grande" href="planificador.html?demo=1">Probar la demo</a><span class="nota">Gratis con cualquier plan. Solo el planificador: <b data-usd-solo></b> pago único.</span></div>
+      </div>
+      <div class="ventana" id="ventana" aria-hidden="true"><div class="ventana-barra"><i></i><i></i><i></i></div><div class="ventana-int"><iframe id="planFrame" title="Demostración del planificador" tabindex="-1" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="opiniones" hidden>
+    <div class="caja">
+      <div class="cabeza"><h2>Parejas que ya la abrieron</h2></div>
+      <div class="opiniones" id="opLista"></div>
+    </div>
+  </section>
+
   <section class="sec alt" id="faq">
     <div class="caja angosta">
       <div class="cabeza"><h2>Preguntas frecuentes</h2></div>
@@ -101,6 +126,8 @@
       <details><summary>¿Cuánto tarda?</summary><p>El plan Esencial, 48 horas desde que nos mandas tus datos. Premium, unos 7 días. Excelencia, unos 14 días.</p></details>
       <details><summary>¿Puedo cambiar cosas después?</summary><p>Sí. Los cambios de la ronda incluida en tu plan son gratis, y si cambia un horario o un lugar, actualizamos la invitación y el mismo enlace muestra lo nuevo.</p></details>
       <details><summary>¿Se puede en otro idioma?</summary><p>Todos los diseños vienen en español. En los planes Premium y Excelencia podemos añadir otros idiomas para tus invitados.</p></details>
+      <details><summary>¿Qué es el planificador?</summary><p>Una herramienta sencilla, incluida con tu invitación, para llevar tu lista de invitados, tu presupuesto y tus tareas. Funciona en tu móvil o computadora, sin instalar nada y sin crear cuenta.</p></details>
+      <details><summary>¿Puedo seguir el estado de mi pedido?</summary><p>Sí. Al hacer el pedido recibes un código; con él ves en qué punto está tu invitación y accedes a tu borrador privado cuando esté listo.</p></details>
       <details><summary>¿Puedo ponerle el nombre de cada invitado?</summary><p>Sí, en el plan Premium o superior: cada invitado ve su nombre y los lugares reservados para él.</p></details>
     </div>
   </section>
@@ -110,7 +137,8 @@
   </section>
 </main>
 
-<footer class="pie"><div class="caja"><div class="pie-in"><div><span class="logo" data-marca>Eterna</span><p>Invitaciones de boda digitales, hechas con cariño.</p></div><nav><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="#faq">Preguntas</a></nav></div><p class="leg">Las fotos de las demostraciones son de personas ficticias creadas con IA.</p></div></footer>
+<footer class="pie"><div class="caja"><div class="pie-in"><div><span class="logo" data-marca>Eterna</span><p>Invitaciones de boda digitales, hechas con cariño.</p></div><nav><a href="#disenos">Diseños</a><a href="#savethedate">Save the Date</a><a href="#planes">Planes y precios</a><a href="planificador.html?demo=1">Planificador</a><a href="seguimiento.html">Seguir mi pedido</a><a href="#faq">Preguntas</a></nav></div><form class="boletin" id="formBoletin" novalidate><label for="bolEmail">Avísame cuando haya diseños nuevos</label><div class="bol-fila"><input id="bolEmail" type="email" autocomplete="email" placeholder="tu@correo.com"><button class="btn solid peq" type="submit">Suscribirme</button></div><p class="estado" id="bolEstado" role="status" aria-live="polite"></p></form>
+<p class="leg">Las fotos de las demostraciones son de personas ficticias creadas con IA.</p></div></footer>
 
 <a class="ayuda" id="ayuda" href="#" target="_blank" rel="noopener" aria-label="Pregúntale a Paloma por WhatsApp"><img src="img/personaje-paloma.webp" alt="" width="54" height="48"><span>¿Te ayudo a elegir?</span></a>
 <div class="barra" id="barra"><span class="txt">Tu invitación, hecha a mano</span><button type="button" data-pedido>Empezar mi invitación</button><i class="sep"></i><a id="barraWa" href="#" target="_blank" rel="noopener">¿Preguntas?</a></div>

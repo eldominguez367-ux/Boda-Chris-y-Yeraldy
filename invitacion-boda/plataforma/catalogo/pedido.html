@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu pedido · Eterna</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#5C1F3A">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body data-pagina="pedido">
+<div class="promo" id="promo"><span>Entrega en 48 horas · Cambios incluidos · Pago único, sin suscripciones</span><button type="button" id="promoX" aria-label="Cerrar aviso">×</button></div>
+<header class="cab" id="cab">
+  <div class="caja cab-in">
+    <a href="index.html" class="logo" data-marca>Eterna</a>
+    <nav aria-label="Principal"><a href="index.html#disenos">Diseños</a><a href="index.html#savethedate">Save the Date</a><a href="index.html#planes">Planes y precios</a><a href="index.html#planificador">Planificador</a><a href="index.html#como">Cómo funciona</a><a href="index.html#faq">Preguntas</a></nav>
+    <div class="cab-der"><a class="link" id="cabWa" href="#" target="_blank" rel="noopener">Escríbenos</a><button class="btn solid" type="button" data-pedido>Empezar</button><button class="burger" id="burger" type="button" aria-label="Menú" aria-expanded="false"><i></i><i></i></button></div>
+  </div>
+</header>
+
+<main class="caja pedido-pag" id="contenido">
+  <div class="pasos-ind" id="indicador" aria-label="Progreso del pedido"></div>
+  <div class="ped-grid">
+    <section class="ped-main" id="pedMain" aria-live="polite"></section>
+    <aside class="ped-resumen" id="pedResumen" aria-label="Resumen del pedido"></aside>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script src="datos-catalogo.js"></script>
+<script src="catalogo.js"></script>
+<script src="pedido.js"></script>
+</body>
+</html>
