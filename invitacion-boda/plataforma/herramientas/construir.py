@@ -26,6 +26,9 @@ FORMATOS = [
   {"id": "botanico", "tipo": "invitacion", "nombre": "Botánico", "frase": "Eucalipto en acuarela y luz de jardín", "estilo": ["Romántico", "Jardín"], "paleta": ["#FBFAF4", "#5F7B58", "#A9BFA0", "#E6ECDD"],
    "desc": "Corona de eucalipto en acuarela alrededor de los nombres, guirnaldas verdes y una foto en arco. Suave, fresco y luminoso.",
    "incluye": ["Corona de eucalipto", "Foto en arco", "Línea de tiempo del día", "Hashtag para compartir"]},
+  {"id": "azulejo", "tipo": "invitacion", "nombre": "Azulejo sevillano", "frase": "Cobalto, patio andaluz y cerámica pintada a mano", "estilo": ["España", "Tradicional"], "paleta": ["#FBF7EE", "#1F3F8F", "#C99A2E", "#E4EAF6"],
+   "desc": "Marco de azulejos sevillanos en azul cobalto y blanco alrededor de los nombres, cenefas de cerámica y una foto en arco. Cálido, luminoso y muy español.",
+   "incluye": ["Marco de azulejos", "Cenefas de cerámica", "Foto en arco", "Línea de tiempo del día"], "nuevo": True},
   {"id": "celestial", "tipo": "invitacion", "nombre": "Celestial", "frase": "Luna, constelaciones y estrellas que titilan", "estilo": ["Romántico", "Nocturno"], "paleta": ["#0C1730", "#D8B56A", "#EFE6D2", "#1B2C57"],
    "desc": "Cielo azul noche con luna y constelaciones doradas, estrellas que titilan y una foto al anochecer. Elegante y misterioso.",
    "incluye": ["Cielo con luna dorada", "Estrellas animadas", "Cuenta atrás en círculos", "Foto en arco dorado"]},
@@ -89,15 +92,16 @@ CUENTA = '''<div class="cd rv" data-cuenta role="timer" aria-live="off">
 ARTE = {
   "editorial": [("portada", "foto-bn", "foto", [600, 900]), ("foto", "foto-1", "foto", [600, 1000])],
   "botanico": [("marco", "marco-botanico", "alpha_blanco", [900]), ("rama", "rama-botanica", "alpha_blanco", [1000]), ("foto", "foto-2", "foto", [600, 1000])],
+  "azulejo": [("marco", "marco-azulejo-a", "rgba", [900]), ("cenefa", "cenefa-azulejo", "foto", [900, 1376]), ("foto", "foto-azulejo", "foto", [600, 1000])],
   "celestial": [("cielo", "cielo", "foto", [600, 900]), ("luna", "luna", "alpha_negro", [400]), ("foto", "noche", "foto", [600, 1000])],
   "tropical": [("portada", "playa", "foto", [600, 900]), ("hojas", "hojas", "alpha_blanco", [520]), ("olas", "olas", "alpha_blanco", [1000]), ("foto", "foto-2", "foto", [600, 1000])],
   "sd-rasca": [("foto", "noche", "foto", [600, 1000])],
   "sd-cartel": [("foto", "foto-1", "foto", [600, 1000])],
   "historia": [("s1", "hero", "foto", [600, 900]), ("s2", "foto-1", "foto", [600, 1000]), ("s3", "playa", "foto", [600, 1000]), ("s4", "noche", "foto", [600, 1000]), ("s5", "foto-bn", "foto", [600, 1000]), ("s6", "foto-2", "foto", [600, 1000])],
 }
-ESTILO_CARTA = {"fotografico": "oliva", "editorial": "marfil", "botanico": "salvia", "celestial": "noche", "tropical": "arena", "historia": "vino", "sd-rasca": "marfil", "sd-cartel": "arena"}
+ESTILO_CARTA = {"fotografico": "oliva", "editorial": "marfil", "botanico": "salvia", "celestial": "noche", "azulejo": "noche", "tropical": "arena", "historia": "vino", "sd-rasca": "marfil", "sd-cartel": "arena"}
 MONO = {"oliva": "#9a8f6f", "marfil": "#c9c9c9", "salvia": "#4f6b56", "noche": "#7d5a1a", "arena": "#f6d3bf", "vino": "#a4655a"}
-MUSICA = {"sobre": "cuerdas", "fotografico": "guitarra", "editorial": "cuerdas", "botanico": "piano", "celestial": "piano", "tropical": "guitarra", "historia": "cuerdas", "sd-rasca": "piano", "sd-cartel": "guitarra"}
+MUSICA = {"sobre": "cuerdas", "fotografico": "guitarra", "editorial": "cuerdas", "botanico": "piano", "azulejo": "guitarra", "celestial": "piano", "tropical": "guitarra", "historia": "cuerdas", "sd-rasca": "piano", "sd-cartel": "guitarra"}
 CARTA_HTML = '''
 <div id="carta" class="carta-ov" role="dialog" aria-label="Invitación cerrada" style="--carta-mono:{mono}">
   <div class="carta-col">
@@ -116,7 +120,7 @@ CARTA_HTML = '''
 <script src="js/carta.js"></script>
 '''
 
-OG = {"sd-rasca": "#F6EFE4", "sd-cartel": "#F2E9DC", "editorial": "#F7F4EE", "botanico": "#5F7B58", "celestial": "#0C1730", "tropical": "#1F8A8A", "historia": "#14110E"}
+OG = {"sd-rasca": "#F6EFE4", "sd-cartel": "#F2E9DC", "editorial": "#F7F4EE", "botanico": "#5F7B58", "azulejo": "#1F3F8F", "celestial": "#0C1730", "tropical": "#1F8A8A", "historia": "#14110E"}
 
 def alpha_from(im, modo):
     a = np.asarray(im.convert("RGB")).astype(np.float32)
@@ -132,13 +136,13 @@ def alpha_from(im, modo):
 def procesar(fmt, dest):
     os.makedirs(f"{dest}/img", exist_ok=True)
     for nombre, fuente, modo, anchos in ARTE[fmt]:
-        im = Image.open(f"{A}/{fuente}.png").convert("RGB")
+        im = Image.open(f"{A}/{fuente}.png").convert("RGBA" if modo == "rgba" else "RGB")
         if modo == "foto":
             for w in anchos:
                 r = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS) if im.width > w else im
                 r.save(f"{dest}/img/{nombre}-{w}.webp", "WEBP", quality=78, method=6)
         else:
-            rgba = alpha_from(im, modo); bb = rgba.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox()
+            rgba = im if modo == "rgba" else alpha_from(im, modo); bb = rgba.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox()
             rgba = rgba.crop(bb); w = anchos[0]; rgba = rgba.resize((w, round(rgba.height * w / rgba.width)), Image.LANCZOS)
             rgba.save(f"{dest}/img/{nombre}.webp", "WEBP", quality=86, method=6)
 
